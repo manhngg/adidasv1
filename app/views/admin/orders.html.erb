@@ -1,0 +1,43 @@
+<div style="margin:10vh 10vw">
+
+<h1> Tất cả Đơn hàng</h1>
+<br>
+<table border="1">
+  <tr>
+    <th>id order:</th>
+    <th>Tên user:</th> 
+    <th>Email user:</th> 
+    <th>Địa chỉ giao hàng:</th>  
+    <th>Số điện thoại xác nhận:</th>
+    <th>Phương thức:</th>  
+    <th>Trạng thái:</th>
+    <th>Chi tiết:</th>
+</tr>
+
+<% @orders.order(:id).each do |o| %>
+
+<tr>
+
+    <td><%= o.id %></td>
+    <td><%= o.user.name %></td>
+    <td><%= o.user.email %></td>
+    <td><%= o.address %></td>
+    <td><%= o.phone %></td>
+    <td><%= o.method %></td>
+    <td><%= o.status %></td>
+    <td><%= o.details %></td>
+
+
+    
+    <% if current_user.try(:admin?) %>
+    <td><%= link_to 'Sửa', edit_order_path(o) %></td>
+    <td><%= link_to 'Xóa', order_path(o),remote: true,
+    method: :delete,
+    data: { confirm: 'Bạn có chắc không?' } %></td>
+    <% end %>
+</tr>
+
+<% end %>
+</table>
+
+</div>

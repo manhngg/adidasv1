@@ -1,0 +1,6 @@
+rails new adidas --database=postgresql
+coppy gemfile
+bundle
+rails db:setup
+
+

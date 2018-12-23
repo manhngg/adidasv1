@@ -1,0 +1,427 @@
+<% j = params[:variant] %>
+<% provide(:title, "adidas "+@product.name.titleize+" - "+ @product.variants.find(j).color.name.to_s.capitalize+"") %>
+<% idsp = @product.id %>
+
+<% giaban = @product.variants.find(j).price %>
+<% giagoc = @product.variants.find(j).originalprice %>
+
+
+<%= render 'layouts/uspbar' %>
+
+
+<div class="rbk-page-info-top-holder">
+
+  <div class="pageinfotop-wrapper ">
+    <%= render 'layouts/breadcrumb' %>
+
+
+
+
+</div>
+</div>
+
+<!------------------------------------------------------------------------------------------ -->
+
+<div data-auto-id="glass-image-viewer" class="glass_image_viewer___3pD5T" style="">
+
+
+    <div data-auto-id="images_container" class="images_container___3KxTB" onclick="zoom()" style="margin-left: -150px">
+
+        <%= image_tag @product.variants.find(j).images.first,onclick: "changecursor()", :id => "expandedImg",:class=>"performance-item", :alt => ""+@product.name+" "+@product.variants.find(j).color.name.to_s.titleize+" "+@product.variants.find(j).sku %>
+        <div id="myresult" class="img-zoom-result" style="display:none">
+        </div>
+
+        <script>
+            function changecursor() {
+                document.getElementById("expandedImg").style.cursor = 'url(/assets/glass/assets/img/icon-adidas-cursor-zoomed.png) 24 24,auto';
+                document.getElementById("expandedImg").setAttribute("onclick", "restorecursor()");
+            }
+            function restorecursor() {
+                document.getElementById("expandedImg").style.cursor = 'url(/assets/glass/assets/img/icon-adidas-cursor-zoom.png) 24 24,auto';
+                document.getElementById("expandedImg").setAttribute("onclick", "changecursor()");
+            }
+        </script>
+
+
+
+        <script>
+            function zoom() {
+                var x = document.getElementById("myresult");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+// Initiate zoom effect:
+imageZoom("expandedImg", "myresult");
+}
+</script>
+
+
+
+</div>
+
+<div class="gl-badge gl-badge--large gl-badge--urgent" style="top: 140px;left: 40px;  <%=  @product.variants.find(j).originalprice ? '' : 'display: none' %> "> -
+    <% if @product.variants.find(j).originalprice %> 
+    <%= (100-giaban.fdiv(giagoc)*100).to_i %>
+    <% end %> %
+</div>
+
+<div data-abtest-atp-1231="control" class="thumbnails___b-juv thumbnails__control">
+
+    <div>
+        <div class="gl-vspacing-l thumbnails_container___3SJWq thumbnails_container__control" style="">
+
+            <% i = 0 %>
+            <% @product.variants.find(j).images.each do |image| %>       
+            <div class="thumbnail___3g19J thumbnail__control">
+                <% i += 1 %>
+                <%= image_tag image, :id => "thumbnail_"<<i.to_s , :onclick => "myFunction(this);", size: "52x52" %> 
+            </div>
+
+            <% end %>
+        </div>
+    </div>
+    <script>
+        document.getElementById("thumbnail_1").parentNode.setAttribute("style", "border-bottom: 2px solid #000;");
+        function myFunction(imgs) {
+            var expandImg = document.getElementById("expandedImg");
+            expandImg.src = imgs.src;
+            var i = <%= i %>;
+            for (j = 1; j < i; j++) { 
+                document.getElementById("thumbnail_"+j).parentNode.setAttribute("style", "");
+            }
+            imgs.parentNode.setAttribute("style", "border-bottom: 2px solid #000");
+// Initiate zoom effect:
+imageZoom("expandedImg", "myresult");
+}
+</script>
+</div>
+</div>
+<div></div>
+</div>
+
+
+
+<div class="order_information___z33d1 col-s-12 col-l-8 col-hg-7" style=" ">
+    <div class="zoom_container___3OlJd "></div>
+    <div data-auto-id="product-information" class="row" itemscope="" itemtype="http://schema.org/Product">
+        <meta itemprop="name" content="<%= @product.name %>">
+        <meta itemprop="image" content="https:dw51c0a0a9/zoom/BS3693_21_model.jpg">
+        <meta itemprop="description" content="Train hard. Stay cool. These men's soccer training pants help you warm up without overheating. Featuring ventilated climacool® and mesh inserts for maximum breathability, they keep the air moving while you stay on the pitch. A slim fit promotes easy footwork.">
+        <meta itemprop="sku" content="BS3693">
+        <div itemprop="brand" itemscope="" itemtype="http://schema.org/Brand">
+            <meta itemprop="name" content="adidas"></div>
+            <div itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+                <meta itemprop="ratingValue" content="4.6">
+                <meta itemprop="reviewCount" content="2264"></div>
+                <div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="USD">
+                    <meta itemprop="price" content="45">
+                    <link itemprop="availability" href="http://schema.org/inStock">
+                    <meta itemprop="url" content="https://www.adidas.com/us/tiro-17-training-pants/BS3693.html"></div>
+                    <div class="product_information___1Tt1L gl-vspacing-m">
+                        <div class="product_rating_starts_container gl-vspacing-s">
+                            <!-------------------------------------------------------------------------------------------------->  
+
+                            <div class="product_reviews___IhPrB">
+
+                                <span data-auto-id="product-rating-review-count">
+                                    <a class="gl-hidden-s-m gl-link gl-body--small gl-no-margin-bottom" onclick="scrollWin()"> 
+                                        <script>
+                                            function scrollWin() {
+                                                window.scrollTo(0,1350);
+                                            }
+                                        </script>
+                                        Đọc tất cả <%= @product.comments.count %> đánh giá 
+                                    </a></span></div></div><div data-auto-id="product-category">
+                                        <!-------------------------------------------------------------------------------------------------->
+                                        <div class="subtitle___2z5HL gl-label gl-label--large">
+                                            <%= @product.gender.name %>'s <%= @product.brand_id ? @product.brand.name : @product.sport.name%>
+                                        </div></div>
+
+                                        <h1 data-auto-id="product-title" class="product_information_title___2rG9M product_title gl-heading gl-heading--m gl-heading--black"><%= @product.name %></h1>
+
+                                        <div class="gl-price-container"><span class="gl-price" style="
+                                        <%=  @product.variants.find(j).originalprice ? 'color:red' : '' %>">
+
+                                        <%= "#{number_to_currency(giaban*23000, precision: 0, separator: ',',delimiter: '.', unit: '₫', format: "%n %u")}" %>
+
+                                    </span><strike>
+                                        <% if @product.variants.find(j).originalprice %> 
+                                        <%= "#{number_to_currency(giagoc*23000, precision: 0, separator: ',',delimiter: '.', unit: '₫', format: "%n %u")}" %>
+                                        <% end %> 
+                                    </strike></div></div>
+
+
+
+                                </div>
+                                <!------------------------------------------------------------------------------------------ --> 
+                                <div data-auto-id="color-chooser" class="gl-vspacing-l wrapper___2M6MI">
+                                    <h5 class="color_variation_title___2Zf7T">MÀU SẮC CÓ SẴN</h5>
+                                    <div class="gl-label gl-label--large gl-vspacing-s color_text___mgoYV">
+                                        <%= Color.find(@product.variants.find(j).color_id).name %> 
+                                    </div>
+                                    <div class="wrapper-full-width___1NpMw" data-abtest-atp-1231="control">
+                                        <div class="wrapper-inner___I9yBh">
+                                            <% @product.variants.order(:id).each do |variant| %>
+                                            <% if variant.avatar.attached? %>
+                                            <div class="color_variation___3RVtF active___14GDh">
+                                                <a href="/products/<%= @product.id %>?variant=<%= variant.id %>"> 
+                                                    <div class="image_holder___1vNhb" style="background-image: url(&quot;<%= url_for(variant.avatar) %>&quot;);margin:1px;<% if variant.id.to_s == j.to_s then %>border-bottom: 2px solid #000;<% end %>">
+                                                    </div>
+                                                </a>
+                                            </div> 
+                                               
+                                            <% end %>
+                                            <% end %>     
+                                        </div>
+                                    </div>
+                                </div>
+                                <!------------------------------------------------------------------------------------------ --> 
+                                <div>
+
+                                </div>
+
+                                <!-- old form -->
+                                <div class="add_to_bag_form___227O2" style="" >
+    <!--
+    <div class="sizechart_link___dRZCk">
+        <div class="gl-link"><span class="gl-icon icon icon-ruler ruler_icon___GgvPD icon--size-m"></span>size chart</div>
+    </div>
+    <div class="row no-gutters size_quantity_row___1pgH7">
+        
+                    <select class="gl-dropdown__select label dropdown-select" data-abtest-atp-1200="variant1" class="gl-dropdown__select-element" aria-label="Select size">
+                        <option style="display:none">chọn kích cỡ</option>
+
+                        </option><option value="0">XS</option><option value="1">S</option>
+                        <option value="2">M</option><option value="3">L</option>
+                        <option value="4">XL</option><option value="5">2XL</option>
+                    </select>
+                
+<select class="gl-dropdown__select label dropdown-select" data-abtest-atp-1200="variant1" class="gl-dropdown__select-element" aria-label="Select size">
+                    <option style="display:none">số lượng</option>
+    <option value="0">1</option>
+    <option value="1">2</option>
+    <option value="2">3</option>
+    <option value="3">4</option>
+    <option value="4">5</option>
+    <option value="5">6</option>
+    <option value="6">7</option>
+    <option value="7">8</option>
+    <option value="8">9</option>
+    <option value="9">10</option>
+    <option value="10">11</option>
+    <option value="11">12</option>
+    <option value="12">13</option>
+    <option value="13">14</option>
+    <option value="14">15</option>
+</select>
+                    
+</div>-->
+<%= form_for @product, :url => cart_items_path, :html => { :method => :post } do |f|%>
+
+
+
+
+
+
+<%= f.hidden_field :variant_id, value: j %>
+<%= f.hidden_field :product_id, value: @product.id %>
+SỐ LƯỢNG
+<%= f.number_field :quantity, value: 1, class: "number-tag", min: 1 %>
+
+<div class="row no-gutters add_to_bag_container___16ts0">
+
+
+
+    <%= f.button 'THÊM VÀO TÚI', class: "gl-cta btn-bag gl-cta--primary gl-cta--full-width"  %>
+
+    <% end %>
+
+    <%= form_for @product, :url => wish_items_path, remote: true, :html => {:action=>"create", :method => :post }, :authenticity_token => true do |f|%>
+    <%= f.hidden_field :variant_id, value: j %>
+    <%= f.hidden_field :product_id, value: @product.id %>
+
+
+
+    <button type="submit" >
+        <div class="gl-cta gl-cta--icon wishlist___31HQW" onclick="" style="background: white;" <% if @wish.wish_items.find_by(variant_id: j) then %> title="Xóa khỏi danh sách yêu thích" <% else %>title="Thêm vào danh sách yêu thích"<% end %>>
+            <span class="gl-icon icon <%= @wish.wish_items.find_by(variant_id: j) ? 'icon-heart' : 'icon-heart-empty' %> icon--size-m"></span>
+        </div>
+    </button>
+    <% end %>
+
+
+
+</div>
+
+<div style="cursor: pointer;">
+    <div class="sizechart_link___dRZCk">
+
+        <span class="gl-icon icon icon-delivery icon--size-l"></span>
+        <br>
+        <div class="gl-label gl-label--large" >MIỄN PHÍ VẬN CHUYỂN VÀ MIỄN PHÍ TRẢ LẠI</div>
+
+        <script>
+          // Get the modal
+          var modal = document.getElementsByClassName("ui-corner-all popup-scale-in")[0];
+          var overlay = document.getElementsByClassName("ui-widget-overlay")[0];
+
+  // Get the button that opens the modal
+  var btn = document.getElementsByClassName("callout-bar-copy")[0];
+  var btn2 = document.getElementsByClassName("gl-label gl-label--large")[2];
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("ui-icon-closethick")[0];
+
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    modal.style.display = "block";
+    overlay.style.display = "block";
+}
+btn2.onclick = function() {
+    modal.style.display = "block";
+    overlay.style.display = "block";
+}
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+    overlay.style.display = "none";
+}
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        overlay.style.display = "none";
+    }
+}
+</script>  
+</div>
+</div>
+
+</div>
+
+<span data-abtest-atp-1203="control" style="display:none;" >
+    <div class="gl-vspacing-l promotion_callout_wrapper___3cKf9">
+        <div class="promotion_callout___3FSI3" data-auto-id="callout_top_stack">
+            <div class="">
+                <div class="" style="font-weight: 700; background: silver; padding: 15px;">
+                    <?php
+                    //https://www.w3schools.com/php/func_date_date_format.asp
+                    if ($day<0) echo "COMING SOON<br><br>Available<br><br>".$date1->format('l F dS h:i:sa').' '.date_default_timezone_get();
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</span>
+</div>        
+<!------------------------------------------------------------------------------------------ -->
+
+
+<div class="col-s-12 offset-l-1 col-l-22 col-xl-20 offset-xl-2 offset-hg-3 col-hg-18" style=" margin-top:-520px;margin-bottom:50px;">
+    <h3 style="text-align: center;">thông tin chi tiết sản phẩm</h3><br><br>
+    <div class="row" style="margin-left: 10%;margin-right: 10%;width: 80%;">
+        <ul id="myDIV">
+            <li class="btn active" 
+            onclick="getElementById('1').style.display='';
+            getElementById('2').style.display='none';
+            getElementById('3').style.display='none';
+            ">miêu tả</li> 
+            <!-- https://www.w3schools.com/howto/howto_js_active_element.asp
+          https://www.w3schools.com/howto/howto_js_alert.asp--> 
+            <li class="btn"
+            onclick="getElementById('1').style.display='none';
+            getElementById('2').style.display='';
+            getElementById('3').style.display='none';
+            ">thông số kỹ thuật</li>
+            <li class="btn"
+            onclick="getElementById('1').style.display='none';
+            getElementById('2').style.display='none';
+            getElementById('3').style.display='';
+            ">chú ý</li>
+        </ul>
+
+</div>
+
+<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+
+        <div class="container no-gutters" style="margin-left: 10%;margin-right: 10%;width: 80%;">
+            <div style="" id="1">
+                <div class="desktop_product_details___m49F0">
+                    <div class="wrapper___1HYKp col-l-12 no-gutters">
+                        <h4><%= @product.name %></h4>
+                        <h5><%= @product.description_h5 %></h5>
+                        <p><%= @product.description_p %></p>
+                    </div>
+                    <div class="product_media___240a0 offset-l-2 col-l-11 offset-hg-1 col-hg-12 no-gutters"><img src="<%= url_for(@product.variants.find(j).images.fifth) %>" class="description_img___3nrC6" alt="<%= @product.name %>"></div>
+                </div>
+            </div>
+            <div style="display: none;" id="2">
+                <div class="container row tab_container___3cvLR">
+                    <pre class="col-l-12" style="width: 100%">
+                        <ul class="no_bullets___3QQYt flex___28BXU">
+                            <%= @product.specifications %>
+                            <li class="gl-vspacing-m">Regular fit</li>
+                            <li class="gl-vspacing-m">Lightweight EVA midsole; Enjoy the comfort and performance of OrthoLite® sockliner</li>
+                            <li class="gl-vspacing-m">Burrito tongue with lace closure</li>
+                            <li class="gl-vspacing-m">Sock-like construction hugs the foot</li>
+                            <li class="gl-vspacing-m">Knit upper</li>
+                            <li class="gl-vspacing-m">Màu sản phẩm: <%= @product.variants.find(j).color.name %></li>
+                            <li class="gl-vspacing-m">Rubber outsole</li>
+                            <li class="gl-vspacing-m">Mã sản phẩm: <%= @product.variants.find(j).sku %></li>
+                        </ul>
+                    </pre>
+                </div>
+            </div>
+            <div style="display: none;" id="3">
+                <div class=\"container row tab_container___3cvLR\">    
+                <%= @product.care %>       
+                    <pre class="col-l-12">                        
+                        <p class="">Hướng dẫn giặt</p>    
+                        <ul class="no_bullets___3QQYt flex___28BXU">       
+                            <li class="gl-vspacing-m"><img src="/assets/glass/assets/img/washing-instructions/A5.svg" width="24" height="24">Giặt nước ấm</li>
+                            <li class="gl-vspacing-m"><img src="/assets/glass/assets/img/washing-instructions/B1.svg" width="24" height="24">Không tẩy</li>  
+                            <li class="gl-vspacing-m"><img src="/assets/glass/assets/img/washing-instructions/C2.svg" width="24" height="24">Phơi khô nơi thoáng mát</li>                            
+                            <li class="gl-vspacing-m"><img src="/assets/glass/assets/img/washing-instructions/D2.svg" width="24" height="24">Chạm vào bằng bàn ủi mát</li>                           
+                            <li class="gl-vspacing-m"><img src="/assets/glass/assets/img/washing-instructions/E1.svg" width="24" height="24">Không giặt khô</li>                       
+                        </ul>                    
+                    </pre>                    
+                    <pre class="col-l-12">                        
+                        <p class="">Thông tin chú ý bổ sung</p>                        
+                        <ul class="no_bullets___3QQYt flex___28BXU">
+                            <li>Rửa với màu sắc tương tự</li><br>              
+                            <li>Không sử dụng chất làm mềm vải</li><br>       
+                            <li>Wash with fasteners closed</li><br>           
+                            <li>Remove promptly after wash</li>             
+                        </ul>                   
+                    </pre>                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------------------------------------------------------------------------------------------------->
+
+<div class="col-s-12 offset-l-1 col-l-22 col-xl-20 offset-xl-2 offset-hg-3 col-hg-18" style="margin-bottom:150px;text-align: center;">
+    <h3>XẾP HẠNG VÀ ĐÁNH GIÁ</h3><br><br>
+    <%= render @product.comments %>
+    <h2>Thêm một bình luận:</h2>
+    <%= render 'comments/form' %>
+</div>

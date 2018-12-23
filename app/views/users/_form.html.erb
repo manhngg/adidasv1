@@ -1,0 +1,60 @@
+<%= form_with model: @user, local: true do |form| %>
+ 
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> prohibited
+        this user from being saved:
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= form.label :'email' %><br>
+    <%= form.text_field :email %>
+  </p>
+ 
+ 
+  <p>
+    <%= form.label :'Quyền' %><br>
+    
+ 
+
+  <select name="user[admin]" id="user_admin_id" >
+    <option value="<%= @user.admin %>"><%= @user.admin ? 'Quản trị viên' : 'Người dùng' %></option>
+<option value="TRUE">Quản trị viên</option>
+<option value="FALSE">Người dùng</option></select>
+ </p>
+
+ 
+  <p>
+    <%= form.label :'name' %><br>
+    <%= form.text_area :name %>
+  </p>
+
+  <p>
+    <%= form.label :'lastname' %><br>
+    <%= form.text_field :lastname %>
+  </p>
+ 
+  <p>
+    <%= form.label :'address' %><br>
+    <%= form.text_area :address %>
+  </p>
+
+  <p>
+    <%= form.label :'phone' %><br>
+    <%= form.text_field :phone %>
+  </p>
+ 
+ 
+  <p>
+    <%= form.submit :'Cập Nhật Người Dùng' %>
+  </p>
+ 
+<% end %>

@@ -1,0 +1,72 @@
+
+<h1>Liệt kê các sản phẩm</h1>
+<% if current_user.try(:admin?) %>
+<%= link_to 'Sản phẩm mới', new_product_path %>
+<% end %><br>
+Tất cả sản phẩm: <%= @products.total_count %><br>
+Sản phẩm mỗi trang: <%= @products.count %><br>
+Tổng số trang: <%= @products.total_pages %><br>
+Trang hiện tại: <%= @products.current_page %><br>
+Trang tiếp theo: <%= @products.next_page  %><br>
+Trang trước: <%= @products.prev_page %><br>
+Có phải trang đầu không?: <%= @products.first_page?  %><br>
+Có phải trang cuối không?: <%= @products.last_page? %><br>
+Có phải trang ngoài khoảng?: <%= @products.out_of_range?  %><br>
+
+Thông tin các mục trang: <%= page_entries_info @products, entry_name: 'item' %><br>
+Đéo biết là cái gì: <%= rel_next_prev_link_tags @products %><br>
+
+Đường dẫn trang tiếp theo: <%= path_to_next_page @products %><br>
+Đường dẫn trang trước: <%= path_to_prev_page @products %><br>
+
+<%= paginate @products %>
+<table border="1">
+  <tr>
+    <th>id sản phẩm:</th>
+    <th>Tên Sản Phẩm:</th> 
+    <th>Avatar:</th>  
+    <th>Hover:</th>
+    <th>Images:</th>  
+    <th>Dòng:</th>
+    <th>Loại:</th>
+    <th>Nhãn:</th>
+    <th>Danh mục:</th>
+    <th>Môn:</th>
+
+</tr>
+
+<% @products.order(:id).each do |product| %>
+<tr>
+
+    <td><%= product.id %></td>
+    <td><%= product.name %></td>
+    <td>
+        <%= image_tag product.variants.first.avatar, size: "50x50" %>
+    </td>
+    <td>
+        <%= image_tag product.variants.first.hover, size: "50x50" %>
+    </td>
+    <td>
+        <% product.variants.first.images.each do |image| %>
+            <%= image_tag image, size: "50x50" %>
+        <% end %>
+    </td>
+    <td><%= product.franchise_id ? product.franchise.name: '' %></td>
+    <td><%= product.producttype_id ? product.producttype.name: '' %></td>
+    <td><%= product.brand_id ? product.brand.name: '' %></td>
+    <td><%= product.category_id ? product.category.name: '' %></td>
+    <td><%= product.sport_id ? product.sport.name: '' %></td>
+
+
+    <td><a href="/products/<%= product.id %>?variant=<%= product.variants.first.id %>">Xem</a></td>
+    <% if current_user.try(:admin?) %>
+    <td><%= link_to 'Sửa', edit_product_path(product) %></td>
+    <td><%= link_to 'Xóa', product_path(product),remote: true,
+    method: :delete,
+    data: { confirm: 'Bạn có chắc không?' } %></td>
+    <% end %>
+</tr>
+<% end %>
+</table>
+<br>
+<%= link_to 'Trở lại', root_path %>

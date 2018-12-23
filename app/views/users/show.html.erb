@@ -1,0 +1,51 @@
+<div style="margin:10vh 10vw">
+<p>
+  <strong>email:</strong>
+  <%= @user.email %>
+</p>
+ 
+<p>
+  <strong>created_at:</strong>
+  <%= @user.created_at %>
+</p>
+
+<p>
+  <strong>updated_at:</strong>
+  <%= @user.updated_at %>
+</p>
+
+<p>
+  <strong>admin:</strong>
+  <%= @user.admin %>
+</p>
+
+<p>
+  <strong>provider:</strong>
+  <%= @user.provider %>
+</p>
+
+<p>
+  <strong>name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>lastname:</strong>
+  <%= @user.lastname %>
+</p>
+
+<p>
+  <strong>address:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong>phone:</strong>
+  <%= @user.phone %>
+</p>
+
+
+
+<%= link_to 'Sửa', edit_user_path(@user) %> |
+<%= link_to 'Trở lại', :back %>
+</div>

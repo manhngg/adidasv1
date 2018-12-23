@@ -1,0 +1,79 @@
+<%= form_with model: @product, local: true do |form| %>
+
+<% if @product.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(@product.errors.count, "error") %> prohibited
+    this product from being saved:
+  </h2>
+  <ul>
+    <% @product.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+
+<%= form.label :name %><%= form.text_area :name %>
+<br>
+<a href="/products/<%= @product.id %>/variants/new">Biến thể mới</a>
+<table>
+  
+  <tr>  
+    <% @product.variants.order(:id).each do |variant| %>
+    <td style="height: 50px; width: 50px">
+      
+      <a href="/products/<%= @product.id %>/variants/<%= variant.id %>/edit"> 
+        <% if variant.avatar.attached? %>
+        <%= image_tag variant.avatar, size: "50x50" %>
+        <% else %>Sửa<% end %>
+      </a> 
+      
+    </td>
+    <td><a data-confirm="Bạn có chắc không?" rel="nofollow" href="/products/<%= @product.id %>/variants/<%= variant.id %>" data-method="delete"> 
+       Xóa 
+      </a> 
+    </td>
+    
+    <% end %>  
+  </tr>
+  
+</table>  
+
+
+<%= form.label :'Giới tính' %>
+<%= form.collection_select :gender_id,Gender.all, :id, :name, prompt: "Choose a franchise" %>
+<%= form.label :'Lứa tuổi' %>
+<%= form.collection_select :age_id,Age.all, :id, :name, prompt: "Choose a franchise" %>
+<%= form.label :Dòng %>
+<%= form.collection_select :franchise_id,Franchise.all, :id, :name, prompt: "Choose a franchise" %>
+<%= form.label :Loại %>
+<%= form.collection_select :producttype_id,Producttype.all, :id, :name, prompt: "Choose a producttype" %>
+<%= form.label :Nhãn %>
+<%= form.collection_select :brand_id,Brand.all, :id, :name, prompt: "Choose a brand" %>
+<%= form.label :'Danh mục' %>
+<%= form.collection_select :category_id,Category.all, :id, :name, prompt: "Choose a category" %>
+<%= form.label :Môn %>
+<%= form.collection_select :sport_id,Sport.all, :id, :name, prompt: "Choose a sport" %>
+
+
+<%= form.submit %>
+<% end %>
+
+<!-- #bin/rails generate model Product 
+productname:text 
+productimagepath:text 
+gender_id:text 
+age_id:text 
+price:integer 
+originalprice:integer 
+color_id:text 
+colordetail:text 
+franchise_id:text 
+producttype_id:text 
+brand_id:text 
+category_id:text 
+sport_id:text 
+productdetailspath:text  -->

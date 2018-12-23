@@ -1,0 +1,187 @@
+<% provide(:title, "adidas Online Shop") %>
+<%= render 'layouts/uspbar' %>
+<br>
+<div id="page_info_top">
+<span data-context="plp_wallpaper:off"></span>
+<div class="pageinfotop-wrapper">
+<div id="breadcrumbs">
+    <ul id="product-breadcrumb" class="breadcrumbs clearfix " data-component="product/ProductBreadCrumb" data-scope="breadcrumbs">
+        <li class="back">
+            <a href="#" id="product-back" title="Trở lại"  onclick="goBack()"><!--[if IE 7]><span class="breadcrumb-icon"></span><![endif]-->Trở lại</a>
+        </li>
+    <script>
+function goBack() {
+    window.history.back();
+}
+</script>
+    <script>
+function goBack() {
+    window.history.back();
+}
+</script>
+        
+        
+            <li class="home" data-context="home">
+                
+                <a href="/" itemprop="url" title="Trang chủ">Trang chủ</a>
+            </li>
+            
+        
+        
+            <li data-context="search results">
+                <span class="divider">/</span>Kết quả tìm kiếm của bạn cho: <a href="/search?q=<%= params[:q][:name_cont] %>" title="<%= params[:q][:name_cont] %>"><%= params[:q][:name_cont] %>(<%= @products.count %>)</a>
+            </li>
+    </ul>
+</div>
+<br>
+<div class="page-heading">
+<div class="rbk-page-heading">
+<div class="rbk-heading-wrapper clearfix">
+<div class="search_results_switch_bar clearfix">
+    <h3>
+        <span class="rbk-search-title search-title">&nbsp;kết quả tìm kiếm cho </span>
+        <span class="rbk-search-value search-value"><%= params[:q][:name_cont] %></span>
+        <span class="search-count">(<%= @products.count %> Sản Phẩm)</span>
+    </h3>
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+<!-- ------------------------------------------------ -->
+
+
+<main>
+
+    
+
+    <!-- lặp lấy sản phẩm -->
+    <% @products.each do |product| %>
+          <% giaban = product.variants.first.price %>
+          <% giagoc = product.variants.first.originalprice %>
+
+    <div onmouseout="document.getElementById('div<%=product.id%>').style.display = 'none';"
+      onmouseover="document.getElementById('div<%=product.id%>').style.display = 'block';">
+        <a href="/products/<%= product.id %>?variant=<%= product.variants.first.id %>">   
+            <div class="product">
+
+              <div class="gl-product-card">
+                <div class="gl-badge gl-badge--small gl-badge--urgent" style="<%=  giagoc ? '' : 'display: none' %> "> -
+                    <% if giagoc %> 
+                    <%= (100-giaban.fdiv(giagoc)*100).to_i %>
+                    <% end %> %
+                </div>
+            </div>
+
+            
+            <img id="img_product_<%=product.id%>" src="<%= url_for(product.variants.first.avatar) %>" alt="adidas <%= product.name.titleize %>" onmouseover="this.src='<%= url_for(product.variants.first.hover) %>'" onmouseout="this.src='<%= url_for(product.variants.first.avatar) %>'" title="adidas <%= product.name.titleize %>" >
+
+                    <div style="display: none;" id="div<%=product.id%>">
+                                <table  style="overflow-x: scroll;
+                      overflow-y: hidden;
+                      white-space: nowrap;  
+                        width: 230px;
+                        height: 69px;
+                        display: block;">
+                                    <tr>  
+                    <% product.variants.order(:id).each do |variant| %>
+<div onmouseout="document.getElementById('div<%=product.id%>').style.display = 'none';"
+      >
+
+
+                    <td style="height: 50px; width: 50px;display: inline-block;">
+                        <a href="/products/<%= product.id %>?variant=<%= variant.id %>"> 
+<img onmouseover="document.getElementById('img_product_<%= product.id %>').src = this.src;" src="<%= url_for(variant.avatar)%>" style="height: 50px;width: 50px;<% if variant.id.to_s == product.variants.first.id.to_s then %>border-bottom: 2px solid #000;<% end %>">
+                        </a> 
+                    </td>
+
+            </div>
+                    <% end %>   
+                                </tr>
+                                </table>  
+                              </div>
+
+            <%= product.gender.name.titleize %>'s <%= product.brand_id ? product.brand.name.titleize : product.sport.name.titleize%>
+
+            <h3 ><%= product.name %></h3>
+
+
+            
+              
+
+            
+            <h3>
+                <span id="red" style=" <%=  giagoc ? 'color:red' : '' %>">
+
+                    <%= "#{giaban*23000}₫" %> 
+                </span></span><strike>
+                    <% if giagoc %> 
+                    <%= "#{giagoc*23000}₫" %>
+                    <% end %> 
+                </strike>
+            </span></h3>
+            <%= product.variants.count.to_s+' màu' %>
+        </div>      
+    </a>    
+</div> 
+
+<script>
+            function changecursor() {
+                document.getElementById("expandedImg").style.cursor = 'url(/assets/glass/assets/img/icon-adidas-cursor-zoomed.png) 24 24,auto';
+                document.getElementById("expandedImg").setAttribute("onclick", "restorecursor()");
+            }
+            function restorecursor() {
+                document.getElementById("expandedImg").style.cursor = 'url(/assets/glass/assets/img/icon-adidas-cursor-zoom.png) 24 24,auto';
+                document.getElementById("expandedImg").setAttribute("onclick", "changecursor()");
+            }
+        </script>
+
+<% end %>
+
+<div class="pagination">
+    <div style="float:left; margin-left:0px"></div>
+    <div style="float:left; text-align: center;"></div>
+    <div style="float:right; margin-right:0px"></div>
+</div>
+
+</main>
+
+<script>
+          // Get the modal
+          var modal = document.getElementsByClassName("ui-corner-all popup-scale-in")[0];
+          var overlay = document.getElementsByClassName("ui-widget-overlay")[0];
+
+  // Get the button that opens the modal
+  var btn = document.getElementsByClassName("callout-bar-copy")[0];
+
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("ui-icon-closethick")[0];
+
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    modal.style.display = "block";
+    overlay.style.display = "block";
+}
+
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+    overlay.style.display = "none";
+}
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        overlay.style.display = "none";
+    }
+}
+</script>  

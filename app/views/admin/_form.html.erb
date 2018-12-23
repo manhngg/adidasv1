@@ -1,0 +1,24 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+<div id="error_explanation">
+<div class="alert alert-danger">
+      The form contains <%= pluralize(@order.errors.count, "error") %>.</div>
+<ul>
+    <% @order.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+ 
+<% end %></ul>
+</div>
+ 
+<% end %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :address, value: current_user.address %>
+  <%= f.hidden_field :phone, value: current_user.phone %>
+  <select name="order[method]" id="order_method_id" >
+    <option value="">Chọn phương thức thanh toán</option>
+<option value="giao hàng rồi trả phí">giao hàng rồi trả phí</option>
+<option value="thẻ">thẻ</option></select>
+  
+  <%= f.hidden_field :status, value: 'đang xử lý' %>
+  <%= f.submit 'Tạo đơn hàng',class: "materialize-btn materialize-btn-black" %>
+<% end %>

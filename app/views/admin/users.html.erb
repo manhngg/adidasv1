@@ -1,0 +1,45 @@
+<div style="margin:10vh 10vw">
+
+<h1> Tất cả Người dùng</h1>
+<br>
+<table border="1">
+  <tr>
+    <th>id:</th>
+    <th>email:</th> 
+    <th>created_at:</th> 
+    <th>updated_at:</th>  
+    <th>Quyền:</th>
+    <th>provider:</th>  
+    <th>name:</th>
+    <th>lastname:</th>
+    <th>address:</th>
+    <th>phone:</th>
+</tr>
+
+<% @users.order(:id).each do |o| %>
+
+<tr>
+
+    <td><%= o.id %></td>
+    <td><%= o.email %></td>
+    <td><%= o.created_at %></td>
+    <td><%= o.updated_at %></td>
+    <td><%= o.admin ? 'Quản trị viên' : 'Người dùng' %></td>
+    <td><%= o.provider %></td>
+    <td><%= o.name %></td>
+    <td><%= o.lastname %></td>
+    <td><%= o.address %></td>
+    <td><%= o.phone %></td>
+
+
+    <td><%= link_to 'Xem', user_path(o) %></td>
+    <td><%= link_to 'Sửa', edit_user_path(o) %></td>
+    <td><%= link_to 'Xóa', user_path(o),remote: true,
+    method: :delete,
+    data: { confirm: 'Bạn có chắc không?' } %></td>
+</tr>
+
+<% end %>
+</table>
+
+</div>

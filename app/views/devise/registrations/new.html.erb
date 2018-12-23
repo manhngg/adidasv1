@@ -1,0 +1,118 @@
+<div id="main">
+<?php include('server.php') ?>
+<div class="rbk-breadcrumbs-wrapper">
+<div class="breadcrumb">
+    <a href="/" title="Home">Trang chủ</a>
+    <span class="divider">/</span><a href="/vn/login/" title="Login and Register">Đăng nhập và Đăng ký</a>
+    <span class="divider">/</span><a href="/vn/register/" title="Register">Đăng ký</a>
+</div>
+<!-- END: breadcrumb -->
+</div>
+
+<div class="accountlogin ssojs col-6 left clearfix">
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+    
+    <h2>ĐĂNG KÝ</h2>
+    <h2>TÊN CỦA BẠN</h2>
+    <br>
+    
+
+    <label for="dwfrm_login_username" class="materialize-element-label"> Tên </label>
+    <%= f.text_field :name, autofocus: true, class: "materialize-element-field", required: "required" %>
+    <br>
+    <br>
+    <br>
+
+    <label for="dwfrm_login_lastname"class="materialize-element-label"> Họ </label>
+    <%= f.text_field :lastname, autofocus: true, class: "materialize-element-field", required: "required" %>
+
+    <br>
+    <h2>THÔNG TIN ĐĂNG NHẬP</h2>
+    
+    <br>
+    
+
+    <label for="dwfrm_login_username" class="materialize-element-label"> Địa chỉ email </label>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "materialize-element-field", required: "required", pattern: '^[^\s@.]+(\.[^\s@.]+)*@[A-Za-z\d]([\w\-]*([A-Za-z0-9]\.[A-Za-z0-9])*)*([A-Za-z0-9]\.[A-Za-z]{2,})$' %>
+    <br>
+    <br>
+    <br>
+
+    <label for="dwfrm_login_password"class="materialize-element-label"> Mật khẩu mới</label>
+    <%= f.password_field :password, autocomplete: "new-password", class: "materialize-element-field", required: "required" %>
+                        <span class="materialize-element-btn" onclick="myFunction()"></span><br><br>
+    <label for="dwfrm_login_password"class="materialize-element-label"> Xác nhận mật khẩu mới</label>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "materialize-element-field", required: "required" %>
+                        <span class="materialize-element-btn" onclick="myFunction()"></span>
+    <script>
+        function myFunction() {
+        var x = document.getElementById("user_password");
+        var y = document.getElementById("user_password_confirmation");
+        if (x.type === "password") {
+        x.type = "text";
+        } else {
+            x.type = "password";
+        }
+
+        if (y.type === "password") {
+        y.type = "text";
+        } else {
+            y.type = "password";
+        }
+    }
+    </script>
+    <span>Vui lòng đảm bảo mật khẩu của bạn chứa tối thiểu một chữ in hoa, một chữ cái, một số (hoặc kí tự đặc biệt) và dài ít nhất 8 ký tự<div>
+
+    
+    <input class="materialize-input" type="checkbox" id="dwfrm_login_rememberme" name="dwfrm_login_rememberme" value="true"/>
+    <label for="dwfrm_login_rememberme" class="materialize-element-box"> Vâng, Tôi đã 13 tuổi * 
+    </label>
+    <br>
+    <input class="materialize-input" type="checkbox" id="dwfrm_login_rememberme" name="dwfrm_login_rememberme" value="true"/>
+    <label for="dwfrm_login_rememberme" class="materialize-element-box"> Tôi muốn cập nhật thông tin từ adidas </label>
+    <br>
+    <input class="materialize-input" type="checkbox" id="dwfrm_login_rememberme" name="dwfrm_login_rememberme" value="true" />
+    <label for="dwfrm_login_rememberme" class="materialize-element-box">Tôi đã đọc và chấp nhận <a href="#">Điều khoản &amp; Điều kiện</a> và Tuyên bố về <a href="#">Quyền Riêng Tư</a> của Adidas</label>
+    <div>
+    <br>
+    <br>
+    <div style="width: 304px; height: 78px;"><div>
+
+    <div class="g-recaptcha" data-sitekey="6Ldpd2kUAAAAAFuUuuAovnREDmycK6zAn_BMIhoI"></div>
+
+    </div>
+    <textarea id="g-recaptcha-response" name="g-recaptcha-response" 
+    class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; 
+    padding: 0px; resize: none;  display: none; ">
+    </textarea></div></div>
+    
+    <button class="materialize-btn materialize-btn-blue login-btn" type="submit" value="Gửi đi" name="Submit"><span>GỬI ĐI</span></button>
+
+<% end %>
+
+
+
+
+</div>
+
+<div class="col-6 right logincreate block logincustomers-wrapper ssojs">
+    <h2>ĐĂNG NHẬP TOÀN CẦU CỦA BẠN SẼ CHO PHÉP BẠN TRUY CẬP VÀO:</h2>
+    <div class="createaccount">
+        <div class="createbenefits clear para-normal">   
+        <ul style="margin-top: 20px;">
+            <li><span style="color: #4ecb68;">&#10003;</span> Tìm kiếm &amp; theo dõi đơn đặt hàng của bạn</li>
+            <li><span style="color: #4ecb68;">&#10003;</span> Đăng nhập một lần cho các sản phẩm và dịch vụ của adidas</li>
+            <li><span style="color: #4ecb68;">&#10003;</span> Lịch sử đơn hàng</li>
+            <li><span style="color: #4ecb68;">&#10003;</span> Thanh toán nhanh hơn</li>
+        </ul>
+        </div>
+    </div>
+</div>
+
+<!-- EO: rbk_content_wrapper -->
+
+</div>

@@ -1,0 +1,25 @@
+en:
+  home:
+    index:
+      title: 'THỨ SÁU ĐEN'
+      summary: 'Giảm giá tới 50% cho một số loại áo khoác có mũ và áo bông, áo phông, đồ dạo phố, giày dép và hơn thế nữa.'
+      summary2: 'Một hình bóng cổ điển được nâng tầm bởi đế giữa TĂNG TỐC.'
+
+  views:
+    pagination:
+      first: "&laquo; Đầu"
+      last: "Cuối &raquo;"
+      previous: "&lsaquo; Trước"
+      next: "Tiếp &rsaquo;"
+      truncate: "&hellip;"
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "Không tìm thấy mục nào" 
+          one: "Hiển thị <b>1</b> mục"
+          other: "Hiển thị <b>tất cả %{count}</b> mục"
+      more_pages:
+        display_entries: "Hiển thị mục <b>%{first}&nbsp;-&nbsp;%{last}</b> trong toàn bộ <b>%{total}</b> mục"
+
+  

@@ -1,0 +1,21 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: adidas
+  pool: 5
+  username: postgres
+  password: Abc@123456789
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: adidas
+  pool: 5
+  username: postgres
+  password: Abc@123456789
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: adidas
+  pool: 5
+  username: postgres
+  password: Abc@123456789

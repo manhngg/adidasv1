@@ -1,0 +1,13 @@
+<% if current_user.try(:admin?) %>
+<h1>Sửa Biến Thể</h1>
+
+<%= render 'form' %>
+
+<a href="/products/<%= params[:product_id] %>/edit">
+      Trở lại
+      </a>
+
+<% else %>
+<h1 style="text-align: center;">Page Not Found</h1>
+<h3 style="text-align: center;">The page you requested does not exist</h1>
+<% end %>

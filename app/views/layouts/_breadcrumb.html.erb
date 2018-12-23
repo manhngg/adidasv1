@@ -1,0 +1,13 @@
+<div id="breadcrumbs">
+	<a id="product-back" onclick="goBack()">
+      &#8624;Trở lại
+      </a>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+      <%= render_breadcrumbs separator: " / " %>
+</div>

@@ -1,0 +1,43 @@
+<%= form_with model: @variant, local: true do |form| %>
+
+<% if @variant.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(@variant.errors.count, "error") %> prohibited
+    this variant from being saved:
+  </h2>
+  <ul>
+    <% @variant.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<% if @variant.avatar.attached? %>
+<%= form.label :avatar %><%= image_tag @variant.avatar, size: "50x50" %>
+
+<%= form.label :hover %><%= image_tag @variant.hover, size: "50x50" %>
+<%= form.label :images %>
+<% @variant.images.each do |image| %>
+	<%= image_tag image, size: "50x50" %>
+<% end %><br>
+<% end %>
+
+<%= form.label :'Giá bán' %><%= form.text_area :price %>
+
+<%= form.label :'Giá gốc' %><%= form.text_area :originalprice %>
+
+<%= form.label :'Mã sản phẩm' %><%= form.text_area :sku %>
+
+<%= form.label :'Số lượng trong kho' %><%= form.text_area :stock %>
+
+
+<%= form.label :'Màu' %>
+<%= form.collection_select :color_id,Color.all, :id, :name, prompt: "Choose a color" %>
+<%= form.label :avatar %><%= form.file_field :avatar %>
+<%= form.label :hover %><%= form.file_field :hover %>
+<%= form.label :images %><%= form.file_field :images, multiple: true %>
+
+<%= form.submit 'Cập nhật biến thể' %>
+<% end %>
+

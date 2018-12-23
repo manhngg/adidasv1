@@ -1,0 +1,596 @@
+<div w3-include-html="/vn/include/slidenav.php"></div>
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+attribution=setup_tool
+page_id="233485690675732"
+theme_color="#000000"
+logged_in_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAIL của bạn."
+logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAIL của bạn.">
+</div>
+
+<div class="glass-header-top" style="<%=  current_user ? 'display: none' : '' %>">
+  
+  <a href="#">Giúp<!-- --> </a>
+  <div class="menu-spacer___3Gp4L"></div>
+  <a href="#">theo dõi đơn hàng và trả về<!-- --> </a>
+  <div class="menu-spacer___3Gp4L"></div>
+  <em><a href="/users/sign_up">Đăng ký mới<!-- --> </a></em>
+  <a href="/users/sign_in" href="">Đăng nhập<!-- --> 
+    <span class="login-icon"></span></a>
+  </div>
+
+  <div class="glass-header-top" style="<%= current_user ? '' : 'display: none' %>">
+    
+    <a href="/users/edit">tài khoản của tôi<!-- --> </a>
+    <div class="menu-spacer___3Gp4L"></div>
+    <a href="/wish">danh sách yêu thích<!-- --> </a>
+    <div class="menu-spacer___3Gp4L"></div>
+    <a href="/orders">trạng thái đơn hàng<!-- --> </a>
+    <em><a class="selfservice-link-login" href="/users/edit" title="Tài Khoản Của Tôi <%=  current_user ? current_user.name : '' %>">Chào mừng trở lại <%=  current_user ? current_user.name : '' %><% if current_user.try(:admin?) %> - bạn là quản trị viên<% end %>
+      <span class="login-icon"></span></a></em>
+    </div>
+
+    <div id="logo"><a href="/">
+      <%= image_tag"img/logo.png", style: "float: left; position: absolute; margin-left: 30px;margin-top: -13px;"  , hight: '11%', width: '11%' %>
+    </a></div>
+    <%= image_tag("img/header-shadow-img.png", style: "vertical-align: middle;width: 100%; max-height: 30px;"  ) %>
+    <!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+    <div class="menu">
+      <ul>
+        <li class="dropdown">
+          <%= link_to "NAM", products_path(gender: "men"), class: "dropbtn" %>
+          <div class="dropdown-content">
+            <div class="col-container">
+
+              <div class="col"> <!-- cột 1 menu 1 -->
+                <a style="text-decoration: none"><h2>NỔI BẬT</h2></a>
+                <a href="/men-new_arrivals">Hàng Mới Về</a>
+                <a href="/men-best-seller">Bán Chạy Nhất</a>
+                <a href="/men-release-dates">Ngày Phát Hành</a>
+                <a href="/men-sale" style="font-weight: bold; text-transform: uppercase;">GIẢM GIÁ</a>
+                <br/>
+                <br/>  
+                <a href="/men-podsystem">P.O.D.System</a>
+                <a href="/men-adicolor">adicolor</a>
+                <a href="/men-ultraboost">ultraboost</a>
+                <a href="/men-work_out_essentials">Workout Essentials</a>
+                <a href="/men-back_to_school">Back to School</a>
+              </div>
+
+              <div class="col"> <!-- cột 2 menu 1 -->
+                <a style="text-decoration: none"><h2>GIÀY</h2></a>
+                <!-- <a href="/men-originals-shoes">Bản Gốc</a> -->
+                <%= link_to "Bản Gốc", products_path(subcategory: "men", brand: "originals", category: "shoes") %>
+                <a href="/men-running-shoes">Chạy</a>
+                <a href="/men-soccer-shoes">Bóng Đá</a>
+                <a href="/men-basketball-shoes">Bóng Rổ</a>
+                <a href="/men-training-shoes">Luyện Tập</a>
+                <a href="/men-cleats-football">Bóng Bầu Dục</a><!--Dày Đinh-->
+                <a href="/men-slides">Dép Quai - Dép Lê</a><!--Dép Lê-->
+                <a href="/men-outdoor-shoes">Đi Bộ Đường Dài</a>
+                <a href="/men-tennis-shoes">Quần vợt</a>
+                <a href="/products/?skateboarding-shoes">Trượt Ván</a>
+                <a href="/men-baseball-shoes">Bóng Chày</a>
+                <a href="/men-golf-shoes">golf</a>
+                <a href="/men-customizable">Tùy Chỉnh với miakat</a>
+                <a href="/men-shoes-sale">Giày Giảm Giá</a>
+              </div>
+
+              <div class="col"> <!-- cột 3 menu 1 -->
+                <a style="text-decoration: none"><h2>QUẦN ÁO</h2></a>
+                <a href="/men-pants">Quần Dài</a>
+                <a href="/men-hoodies_sweatshirts">Hoodies - áo nỉ</a>
+                <a href="/men-jackets">Áo khoác</a>
+                <a href="/men-track_suits">Đồ Ra Đường</a>
+                <a href="/men-short_sleeve_shirts">Áo sơ mi ngắn tay</a>
+                <a href="/men-t_shirts">Graphic T-Shirts</a>
+                <a href="/men-long_sleeve_shirts">Áo sơ mi dài tay</a>
+                <a href="/men-polo">polos</a> <!-- Mã Cầu-->
+                <a href="/men-jerseys">Jerseys</a> <!-- Áo Nịt Len-->
+                <a href="/men-compression">compression</a> <!-- Bó-->
+                <a href="/men-tights">Quần Bó</a>
+                <a href="/men-shorts">shorts</a>
+                <a href="/men-tank_tops">Áo Ba Lỗ</a>
+                <a href="/men-underwear">Đồ Lót</a>
+                <a href="/men-apparel-sale">Quần Áo Giảm Giá</a>
+              </div>
+
+              <div class="col"> <!-- cột 4 menu 1 -->
+                <a style="text-decoration: none"><h2>PHỤ KIỆN</h2></a>
+                <a href="/men-bags">Túi và ba lô</a>
+                <a href="/men-hats">Mũ - Beanies</a>
+                <a href="/men-socks">Vớ</a>
+                <a href="/men-phone_case">Ốp Điện Thoại</a>
+                <a href="/men-sunglasses">Kính Râm</a>
+                <a href="/men-balls">Những Quả Bóng</a>
+                <a href="/men-watches">Đồng Hồ</a>
+                <a href="/men-gloves">Găng Tay</a>
+                <a href="/men-scarves">Khăn Quàng Cổ</a>
+                <a href="/men-accessories-grid=true">Tất Cả Phụ Kiện</a>
+                <a href="/men-accessories-sale">Phụ Kiện Giảm Giá</a>
+              </div>
+
+              <div class="col"> <!-- cột 5 menu 1 -->
+                <a style="text-decoration: none"><h2>MÔN</h2></a>
+                <a href="/men-running">Chạy</a>
+                <a href="/men-soccer">Bóng Đá</a>
+                <a href="/men-basketball">Bóng Rổ</a>
+                <a href="/men-training">Luyện Tập</a>
+                <a href="/men-football">Bóng Bầu Dục</a>
+                <a href="/men-outdoor">Ngoài Trời</a>
+                <a href="/men-tennis">Quần Vợt</a>
+                <a href="/men-skateboarding">Trượt Ván</a>
+                <a href="/men-baseball">Bóng Chày</a>
+                <a href="/men-weightlifting">Giảm Cân</a>
+                <a href="/men-hockey">Khúc Côn Cầu</a>
+                <a href="/men-golf">golf</a>
+                <a href="/men-volleyball">Bóng Chuyền</a>
+                <a href="/men-lacrosse">Bóng Vợt</a>
+                <a href="/products/?college-men-_gear-arizona_state_university">Thiết Bị Trường Học</a>
+              </div>
+
+            </div>
+          </div>
+        </li>
+        <li class="dropdown">
+          <%= link_to "NỮ", products_path(gender: "women"), class: "dropbtn" %> 
+          <div class="dropdown-content">
+            <div class="col-container">
+
+              <div class="col"> <!-- cột 1 menu 1 -->
+                <a style="text-decoration: none"><h2>NỔI BẬT</h2></a>
+                <a href="/women-new_arrivals">Hàng Mới Về</a>
+                <a href="/womenn-best-seller">Bán Chạy Nhất</a>
+                <a href="/women-release-dates">Ngày Phát Hành</a>
+                <a href="/women-sale" style="font-weight: bold; text-transform: uppercase;">GIẢM GIÁ</a>
+                <br/>     
+                <br/>       
+                <%= link_to "P.O.D.System", products_path(subcategory: "women",franchise: "podsystem") %> 
+                <a href="/women-adicolor">adicolor</a>
+                <a href="/women-ultraboost">ultraboost</a>
+                <a href="/women-work_out_essentials">Workout Essentials</a>
+                <a href="/women-back_to_school">Back to School</a>
+              </div>
+
+              <div class="col"> <!-- cột 2 menu 1 -->
+                <a style="text-decoration: none"><h2>GIÀY</h2></a>
+                <a href="/women/originals/shoes">Bản gốc</a>
+                <a href="/women-running-shoes">Chạy</a>
+                <a href="/women-training-shoes">Luyện Tập</a>
+                <a href="/women-essentials-shoes">Thiết Yếu</a>
+                <a href="/women-slides">Dép Quai - Dép Lê</a>
+                <a href="/women-outdoor-shoes">Đi Bộ Đường Dài</a>
+                <a href="/women-tennis-shoes">Quần vợt</a>
+                <a href="/women-golf-shoes">golf</a>
+                <a href="/women-soccer-shoes">Bóng đá</a>
+                <a href="/women-volleyball">Bóng Chuyền</a>
+                <a href="/women-customizable">Tùy chỉnh với miadidas</a>
+                <a href="/women-shoes-sale">Giày Giảm Giá</a>
+              </div>
+
+              <div class="col"> <!-- cột 3 menu 1 -->
+                <a style="text-decoration: none"><h2>QUẦN ÁO</h2></a>
+                <a href="/women-hoodies_sweatshirts">Hoodies - áo nỉ</a>
+                <a href="/women-pants">Quân Dài</a>
+                <a href="/women-tights">Quần bó</a>
+                <a href="/women-bras">Áo Ngực Thể Thao</a>
+                <a href="/women-track_suits">Đồ Ra Đường</a>
+                <a href="/women-jackets">Áo khoác</a>
+                <a href="/women-short_sleeve_shirts">Áo sơ mi ngắn tay</a>           
+                <a href="/women-long_sleeve_shirts">Áo sơ mi dài tay</a>
+                <a href="/women-compression">compression</a> <!-- Bó-->
+                <a href="/women-polo">polos</a> <!-- Mã Cầu-->
+                <a href="/women-dresses_and_skirts">Quần Áo - Váy</a>
+                <a href="/women-shorts">shorts</a>
+                <a href="/women-tank_tops">Áo Ba Lỗ</a>
+                <a href="/women-apparel-sale">Quần Áo Giảm Giá</a>
+              </div>
+
+              <div class="col"> <!-- cột 4 menu 1 -->
+                <a style="text-decoration: none"><h2>PHỤ KIỆN</h2></a>
+                <a href="/women-bags">Túi và ba lô</a>
+                <a href="/women-hats">Mũ - Beanies</a>
+                <a href="/women-socks">Vớ</a>
+                <a href="/women-headbands">Băng Đầu</a>
+                <a href="/women-phone_case">Ốp Điện Thoại</a>
+                <a href="/women-sunglasses">Kính Râm</a>
+                <a href="/women-balls">Những Quả Bóng</a>
+                <a href="/women-watches">Đồng Hồ</a>
+                <a href="/women-accessories-grid=true">Tất Cả Phụ Kiện</a>
+                <a href="/women-accessories-sale">Phụ Kiện Giảm Giá</a>
+              </div>
+
+              <div class="col"> <!-- cột 5 menu 1 -->
+                <a style="text-decoration: none"><h2>MÔN</h2></a>
+                <a href="/women-running">Chạy</a>
+                <a href="/women-training">Luyện Tập</a>
+                <a href="/women-soccer">Bóng Đá</a>
+                <a href="/women-outdoor">Ngoài Trời</a>
+                <a href="/women-tennis">Quần Vợt</a>
+                <a href="/women">Bóng Mềm</a>
+                <a href="/women-weightlifting">Giảm Cân</a>
+                <a href="/women-volleyball">Bóng Chuyền</a>
+                <a href="/women-yoga">Yoga</a>
+                <a href="/women-hockey">Khúc Côn Cầu</a>
+                <a href="/women-golf">golf</a>
+                <a href="/women-lacrosse">Bóng Vợt</a>
+                <a href="/products/?college_gear-women-arizona_state_university">Thiết Bị Trường Học</a>
+              </div>
+
+            </div>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">TRẺ</a>
+          <div class="dropdown-content">
+            <div class="col-container">
+
+              <div class="col"> <!-- cột 1 menu 3 -->
+                <a><h2 style="text-decoration: none">NỔI BẬT</h2></a>
+                <a href="/products/?kids-new_arrivals">Hàng Mới Về</a>
+                <a href="/products/?kids-best-seller">Bán Chạy Nhất</a>            
+                <a href="/products/?kids-sale" style="font-weight: bold; text-transform: uppercase;">GIẢM GIÁ</a>
+                <br/>     
+                <br/>     
+                <a href="/products/?kids-podsystem">P.O.D. System</a>
+                <a href="/products/?kids-ultraboost">Ultraboost</a>
+                <a href="/products/?kids-adicolor">adicolor</a>
+                <a href="/products/?kids-back_to_school">Back to School</a>
+              </div>
+
+              <div class="col"> <!-- cột 2 menu 3 -->
+                <a href="/products?age=youth" style="text-decoration: none"><h2>TRẺ (8-14)</h2></a>
+                <a href="/products/?kids-boys-youth-shoes">Giày Trai</a>
+                <a href="/products/?kids-girls-youth-shoes">Giày Gái</a>
+                <a style="text-decoration: none; cursor: default;">---</a>   
+                <a href="/products/?kids-boys-youth-apparel">Quần Áo Trai</a>
+                <a href="/products/?kids-girls-youth-apparel">Quần Áo Gái</a>
+                <a style="text-decoration: none; cursor: default;">---</a>   
+                <a href="/products/?kids-youth-sale">Giảm Giá</a>
+                <a style="text-decoration: none; cursor: default;">---</a>   
+                <a href="/products/?kids-youth" style="font-weight: bold">tất cả Trẻ</a>
+              </div>
+
+              <div class="col"> <!-- cột 3 menu 3 -->
+                <a href="/products?age=children" style="text-decoration: none"><h2>TRẺ EM (4-8)</h2></a>
+                <a href="/products/?kids-boys-children-shoes">Giày Trai</a>
+                <a href="/products/?kids-girls-children-shoes">Giày Gái</a>
+                <a style="text-decoration: none; cursor: default;">---</a>   
+                <a href="/products/?kids-boys-children-apparel">Quần Áo Trai</a>
+                <a href="/products/?kids-girls-children-apparel">Quần Áo Gái</a>
+                <a style="text-decoration: none; cursor: default;">---</a>   
+                <a href="/products/?kids-children-sale">Giảm Giá</a>
+                <a style="text-decoration: none; cursor: default;">---</a>   
+                <a href="/products/?kids-children" style="font-weight: bold">tất cả Trẻ Em</a>
+              </div>
+
+              <div class="col"> <!-- cột 4 menu 3 -->
+                <a href="/products?age=infant_toddler" style="text-decoration: none"><h2>SƠ SINH - CHẬP CHỮNG (0-4)</h2></a>
+                <a href="/products?age=infant_toddler-shoes">Giày</a>
+                <a style="text-decoration: none; cursor: default;">---</a>   
+                <a href="/products/?kids-infant_toddler-apparel">Quần Áo</a>
+                <a style="text-decoration: none; cursor: default;">---</a>   
+                <a href="/products/?kids-infant_toddler-sale">Giảm Giá</a>
+                <a style="text-decoration: none; cursor: default;">---</a>   
+                <a href="/products/?kids-infant_toddler" style="font-weight: bold">Tất Cả Sơ Sinh - Chập Chững</a>
+              </div>
+
+              <div class="col"> <!-- cột 5 menu 3 -->
+                <a href="/products/?kids-accessories" style="text-decoration: none"><h2>PHỤ KIỆN</h2></a>
+                <a href="/products/?kids-bags">Túi và Ba Lô</a>
+                <a href="/products/?kids-socks">Vớ</a>
+                <a href="/products/?kids-hats">Mũ - Beanies</a>
+                <a href="/products/?kids-balls">Bóng</a>
+              </div>
+
+            </div>
+          </div>
+        </li>
+        <li class="menu-spacer___1eBnZ"></li>
+        <li class="dropdown">
+          <a class="dropbtn" style="cursor: pointer">MÔN</a>
+          <div class="dropdown-content">
+            <div class="col-container">
+              <!-- \\\\//// -->
+              <!-- COLUMN 1 -->
+              <!-- ////\\\\ -->
+              <div class="col"> <!-- cột 1 menu 4 -->
+                <a href="/products/?running" style="text-decoration: none"><h2>CHẠY</h2></a>
+                <a href="/products/?running">
+                  <%= image_tag("img/Running.png", :alt => "rss feed") %>
+                </a>
+                <br>
+                <a href="/products/?running-shoes">Giày</a>
+                <a href="/products/?running-apparel">Quần Áo</a>
+                <a href="/products/?running-accessories">Phụ Kiện</a>
+                <a style="text-decoration: none; cursor: default;">---</a>       
+                <a href="/products/?ultraboost">ultraboost</a>
+                <a href="/products/?alphabounce">alphabounce</a>
+                <a href="/products/?shoes-pureboost">Pureboost</a>
+                <a style="text-decoration: none; cursor: default;">---</a>       
+                <a href="/products/?running-grid=true" style="font-weight: bold">tất cả Chạy</a>
+              </div>
+              <!-- \\\\//// -->
+              <!-- COLUMN 2 -->
+              <!-- ////\\\\ -->
+              <div class="col"> <!-- cột 2 menu 1 -->
+                <a  href="/products/?soccer" style="text-decoration: none"><h2>BÓNG ĐÁ</h2></a>
+                <a href="/products/?soccer">
+                  <%= image_tag("img/FB_SS18_DeadlyStrike_Predator_NV-IMG.jpg", :alt => "rss feed") %>
+                </a>
+                <br>
+                <a href="/products/?soccer-shoes">Giày</a>
+                <a href="/products/?soccer-apparel">Quần Áo</a>
+                <a href="/products/?soccer-accessories">Phụ Kiện</a>
+                <a style="text-decoration: none; cursor: default;">---</a>       
+                <a href="/products/?Predator">Predator</a>
+                <a href="/products/?X">X</a>
+                <a href="/products/?Nemeziz">Nemeziz</a>
+                <a href="/products/?Copa">Copa</a>
+                <a style="text-decoration: none; cursor: default;">---</a>        
+                <a href="/products/?soccer-grid=true" style="font-weight: bold">tất cả soccer</a>
+              </div>
+              <!-- \\\\//// -->
+              <!-- COLUMN 3 -->
+              <!-- ////\\\\ -->
+              <div class="col"> <!-- cột 3 menu 1 -->
+                <a  href="/products/?basketball" style="text-decoration: none"><h2>BÓNG RỔ</h2></a>
+                <%= image_tag("img/new_harden_basketball_flyout_nav.jpg", size: "172x80") %>
+              </a>
+              <br>
+              <a href="/products/?basketball-shoes">Giày</a>
+              <a href="/products/?basketball-apparel">Quần Áo</a>
+              <a href="/products/?basketball-accessories">Phụ Kiện</a>
+              <a style="text-decoration: none; cursor: default;">---</a>       
+              <a style="text-decoration: none; cursor: default;">---</a>     
+              <a href="/products/?james_harden">James Harden</a>
+              <a href="/products/?damian_lillard">Damian Lillard</a>
+              <a href="/products/?crazy_explosive">Crazy Explosive</a>
+              <a style="text-decoration: none; cursor: default;">---</a>        
+              <a href="/products/?basketball-grid=true" style="font-weight: bold">tất cả Bóng Rổ</a>
+            </div>
+            <!-- \\\\//// -->
+            <!-- COLUMN 4 -->
+            <!-- ////\\\\ -->
+            <div class="col"> <!-- cột 4 menu 1 -->
+              <a href="/products/?football" style="text-decoration: none"><h2>BÓNG BẦU DỤC</h2></a>
+              <%= image_tag("img/CLP_nav_1.jpg") %>
+              <br>
+              <a href="/products/?cleats-football">cleats</a><!--Dày Đinh-->
+              <a href="/products/?football-apparel">Quần Áo</a>
+              <a href="/products/?football-accessories">Phụ Kiện</a>
+              <a style="text-decoration: none; cursor: default;">---</a>       
+              <a href="/products/?compression">compression</a>
+              <a href="/men-cleats-football-Freak">Freak cleats</a>
+              <a href="/products/?adizero_5_star">Adizero 5-Star</a>
+              <a style="text-decoration: none; cursor: default;">---</a>       
+              <a href="/products/?football-grid=true" style="font-weight: bold">tất cả football</a>
+            </div>
+            <!-- \\\\//// -->
+            <!-- COLUMN 5 -->
+            <!-- ////\\\\ -->
+            <div class="col"> <!-- cột 5 menu 1 -->
+              <a style="text-decoration: none"><h2>MÔN KHÁC</h2></a>
+              <a href="/products/?training">Luyện Tập</a>
+              <a href="/products/?baseball">Bóng Chày</a>
+              <a href="/products/?outdoor">Ngoài Trời</a>
+              <a href="/products/?skateboarding">Trượt Ván</a>
+              <a href="/products/?Snowboarding">Trượt Tuyết</a>
+              <a href="/products/?tennis">Quần Vợt</a>
+              <a href="/products/?golf">golf</a>
+              <a href="/products/?hockey">Khúc Côn Cầu</a>
+              <a href="/products/?lacrosse">lacrosse</a>
+              <a href="/products/?Volleyball">Bóng Chuyền</a>
+              <a href="/products/?Yoga">Yoga</a>
+              <a href="/products/?weightlifting">Giảm Cân</a>
+            </div>
+
+          </div>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a class="dropbtn" style="cursor: pointer">NHÃN</a>
+        <div class="dropdown-content">
+          <div class="col-container">
+            <!-- \\\\//// -->
+            <!-- COLUMN 1 -->
+            <!-- ////\\\\ -->
+            <div class="col"> <!-- cột 1 menu 5 -->
+              <a href="/products/?originals">
+                <%= image_tag("img/text_originals.png") %>
+              </a>
+              <br>
+              <a href="/products/?originals">
+                <%= image_tag("img/D1_websine_nav_172x80.jpg") %>
+              </a>
+              <br>
+              <a href="/products/?originals-apparel">Giày</a>
+              <a href="/products/?originals-accessories">Quần Áo</a>
+              <a href="/products/?originals-new-arrivals">Hàng Mới Về</a>
+              <a style="text-decoration: none; cursor: default;">---</a>       
+              <a href="/products/?Superstar">Superstar</a>
+              <a href="/products/?Stan Smith">Stan Smith</a>
+              <a href="/products/?NMD">NMD</a>
+              <a style="text-decoration: none; cursor: default;">---</a>       
+              <a href="/products/?originals?grid=true" style="font-weight: bold">tất cả adidas originals</a>
+            </div>
+            <!-- \\\\//// -->
+            <!-- COLUMN 2 -->
+            <!-- ////\\\\ -->
+            <div class="col"> <!-- cột 2 menu 5 -->
+              <a href="/products/?athletics-zne">
+                <%= image_tag("img/adidas-logo-menu-2.jpg") %>
+              </a>
+              <br>
+              <a href="/products/?athletics-zne">
+                <%= image_tag("img/Athletics_Flyout_US.jpg") %>
+              </a>
+              <br>
+              <a href="/men-athletics">Quần Áo Nam</a>
+              <a href="/women-athletics">Quàn Áo Nữ</a>
+              <a href="/products/?kids-athletics">Quần Áo Trẻ</a>
+              <a href="/products/?athletics-new-arrivals">Hàng Mới Về</a>
+              <a style="text-decoration: none; cursor: default;">---</a>   
+              <a href="/products/?zne">Z.N.E.</a>
+              <a style="text-decoration: none; cursor: default;">---</a>   
+              <a href="/products/?athletics-apparel?grid=true" style="font-weight: bold">tất cả Athletics</a>
+            </div>
+            <!-- \\\\//// -->
+            <!-- COLUMN 3 -->
+            <!-- ////\\\\ -->
+            <div class="col"> <!-- cột 3 menu 5 -->
+              <a href="/products/?adidas_by_stella_mccartney"><%= image_tag("img/SM.png") %></a>
+              <br>
+              <a href="/products/?adidas_by_stella_mccartney"><%= image_tag("img/aSMC_SS18_Run_SUP_03_Flyout_Nav_172x80.jpg") %></a>
+              <br>
+              <a href="/products/?adidas_by_stella_mccartney-shoes">shoes</a>
+              <a href="/products/?adidas_by_stella_mccartney-apparel">Clothing</a>
+              <a href="/products/?adidas_by_stella_mccartney-accessories">accessories</a>
+              <a href="/products/?adidas_by_stella_mccartney-new-arrivals">Hàng Mới Về</a>
+              <a style="text-decoration: none; cursor: default;">---</a>   
+              <a href="/products/?adidas_by_stella_mccartney-tennis">tennis</a>
+              <a href="/products/?adidas_by_stella_mccartney-training">training</a>
+              <a style="text-decoration: none; cursor: default;">---</a>   
+              <a href="/products/?adidas_by_stella_mccartney?grid=true" style="font-weight: bold">tất cả adidas bởi Stella McCartney</a>
+            </div>
+            <!-- \\\\//// -->
+            <!-- COLUMN 4 -->
+            <!-- ////\\\\ -->
+            <div class="col"> <!-- cột 4 menu 5 -->
+              <a><h2>BỘ SƯU TẬP</h2></a>
+              <a href="/products/?eqt?grid=true">EQT</a>
+              <a href="/products/?gazelle?grid=true">Gazelle</a>
+              <a href="/products/?campus?grid=true">Khuôn viên</a>
+              <a href="/products/?tubular?grid=true">Hình ống</a>
+              <a href="/products/?iconics">Biểu tượng</a>
+              <a style="text-decoration: none; cursor: default;">---</a>   
+              <a href="/products/?adicolor">adicolor Clothing</a>
+            </div>
+
+          </div>
+        </div>
+      </li>
+      <li class="menu-spacer___1eBnZ"></li>
+      <li class="dropdown">
+        <a href="/products/?customizable" class="dropbtn">KÌ NGHỈ</a>
+        <div class="dropdown-content">
+          <div class="col-container">
+            <!-- \\\\//// -->
+            <!-- COLUMN 1 -->
+            <!-- ////\\\\ -->
+            <div class="col"> <!-- cột 1 menu 6 -->
+              <a href="/products/?originals-customizable" style="text-decoration: none"><h2>ĐỘC ĐÁO</h2></a>
+              <a href="/products/?originals-customizable"><%= image_tag("img/mi_1.jpg") %></a>
+              <br>
+              <a href="/products/?i_5923-customizable">I-5923</a>
+              <a href="/products/?originals-swift-customizable">Swift Run</a>
+              <a href="/products/?originals-campus-customizable">Campus</a>
+              <a href="/products/?superstar-customizable">Superstar</a>
+              <a href="/products/?stan_smith-customizable">Stan Smith</a>
+              <a href="/products/?eqt-customizable">EQT</a>
+              <a href="/products/?tubular-customizable">Tubular</a>
+              <a href="/products/?gazelle-customizable">Gazelle</a>
+              <a href="/products/?originals-spzl-customizable">Spezial</a>
+              <a href="/products/?adilaette-customizable">adilette</a>
+              <a style="text-decoration: none; cursor: default;">---</a>       
+              <a href="/products/?originals-customizable" style="font-weight: bold">All originals</a>
+            </div>
+            <!-- \\\\//// -->
+            <!-- COLUMN 2 -->
+            <!-- ////\\\\ -->
+            <div class="col"> <!-- cột 2 menu 6 -->
+              <a href="/products/?running-customizable" style="text-decoration: none"><h2>CHẠY</h2></a>
+              <a href="/products/?running-customizable"><%= image_tag("img/ss18_miultraboost_multicolor_Topnav.jpg") %></a>
+              <br>
+              <a href="/products/?alphabounce-customizable">alphabounce Beyond</a>
+              <a href="/products/?ultraboost-running-shoes-customizable">ultraboost X</a>
+              <a href="/products/?pureboost-customizable">Pureboost</a>
+              <a href="/products/?adizero-running-customizable">Energy Cloud</a>
+              <a href="/products/?supernova-customizable">Supernova</a>
+              <a style="text-decoration: none; cursor: default;">---</a>     
+              <a href="/products/?running-customizable" style="font-weight: bold">All running</a>
+            </div>
+            <!-- \\\\//// -->
+            <!-- COLUMN 3 -->
+            <!-- ////\\\\ -->
+            <div class="col"> <!-- cột 3 menu 6 -->
+              <a href="/products/?basketball-customizable" style="text-decoration: none"><h2>BÓNG RỔ</h2></a>
+              <a href="/products/?basketball-customizable"><%= image_tag("img/mi_3.jpg") %></a>
+              <br>
+              <a href="/products/?customizable-james_harden">Harden Vol. 2</a>
+              <a href="/products/?customizable-damian_lillard">Dame 4</a>
+              <a href="/products/?crazylight-basketball-customizable">Crazylight Boost</a>
+              <a href="/products/?crazy_explosive-customizable">Crazy Explosive</a>
+              <a href="/products/?mad-basketball-shoes-customizable">Mad Bounce</a>
+              <a style="text-decoration: none; cursor: default;">---</a>   
+              <a href="/products/?running-customizable" style="font-weight: bold">All basketball</a> 
+            </div>
+            <!-- \\\\//// -->
+            <!-- COLUMN 4 -->
+            <!-- ////\\\\ -->
+            <div class="col"> <!-- cột 4 menu 6 -->
+              <a href="/products/?customizable" style="text-decoration: none"><h2>KHÁM PHÁ THÊM</h2></a>            <a href="#"><%= image_tag("img/mi_2.jpg") %></a>
+              <br>
+              <a href="/products/?ultraboost_4.0-customizable">ultraboost Multi Color</a>
+              <a href="/products/?football-customizable">Bóng Bàu Dục</a>
+              <a href="/products/?baseball-customizable">Bóng Chày</a>
+              <a style="text-decoration: none; cursor: default;">---</a>    
+              <a href="/men-customizable">Tất Cả của Nam</a>
+              <a href="/women-customizable">Tất Cả của Nữ</a>
+              <a style="text-decoration: none; cursor: default;">---</a>    
+              <a href="/products/?giftcards">Gift Cards</a>
+              <a style="text-decoration: none; cursor: default;">---</a>    
+            </div>
+
+          </div>
+        </div>
+        <!-- End contentasset -->
+      </li>
+      <% if current_user.try(:admin?) %>
+      <li class="menu-spacer___1eBnZ"></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">TRANG QUẢN TRỊ</a>
+          <div class="dropdown-content">
+            <div class="col-container">
+
+              <div class="col"> <!-- cột 1 menu 3 -->
+                <a href="/admin/products"><h2 style="text-decoration: none">Sản phẩm</h2></a>
+                <a href="/admin/products"><%= image_tag("img/products.jpg", size: "172x80") %></a>
+              </div>
+              <div class="col"> <!-- cột 1 menu 3 -->
+                <a href="/admin/orders"><h2 style="text-decoration: none">Đơn hàng</h2></a>
+                <a href="/admin/orders"><%= image_tag("img/orders.jpg", size: "172x80") %></a>
+              </div>
+              <div class="col"> <!-- cột 1 menu 3 -->
+                <a href="/admin/users"><h2 style="text-decoration: none">Người dùng</h2></a>
+                <a href="/admin/users"><%= image_tag("img/users.png", size: "172x80") %></a>
+              </div>
+            </div>
+          </div>
+      </li>
+      <% end %>
+      <a title="Kiểm tra" href="/cart" class="addtobag"><%= image_tag("img/bag.png", :style => "float: right") %></a>
+      <% if session[:cart_id].present? %>
+      <div class="wish" style="<%= @wish.wish_items.count == 0 ? 'display: none' : '' %>">
+        <a href="/wish" class="addtobag">
+          <%= image_tag("img/wish.png", :style => "float: right") %>
+          <div class="centered">
+            <% totalwish = @wish.wish_items.count %><%= totalwish %>
+          </div>
+        </a>
+      </div>
+      <% end %>
+      <form class="search" id="product_search" action="/search" accept-charset="UTF-8" method="get">
+        <input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="text" name="q[name_cont]" autoComplete="off" placeholder="tìm" value="" />
+        <input type="hidden" name="sitePath" value="vn" />
+      </form>
+    </ul>
+  </div>
+
+
+  <!-- ---------------------------------------------------------------------------------------------------------------------------- -->

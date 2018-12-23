@@ -1,0 +1,197 @@
+<div id="main">
+<div class="rbk-breadcrumbs-wrapper">
+
+
+
+
+<div class="breadcrumb">
+
+
+
+<a href="/" title="Home">Trang chủ</a>
+
+
+
+
+<span class="divider">/</span><a href="<?php echo$_SERVER['HTTP_REFERER']?>" title="Tài Khoản Của Tôi">Tài Khoản Của Tôi</a>
+
+
+
+
+
+</div><!-- END: breadcrumb -->
+</div>
+  
+
+
+
+<div class="rbk-content-wrapper">
+
+
+<div id="leftcolumn">
+  <div class="styled_nav universe_link ">
+    <div class="contentasset" data-contentasset-id="account-navigation" data-contentasset="account-navigation">
+      <ul class="adi-myaccout-redesign">
+        <li class="navgroup"><a class="nav-title universe_link account_overview_link" title="Tài Khoản Của Tôi" href="/vn/myaccount/login/login_success.php">Tài Khoản Của Tôi</a></li>
+        <li class="navgroup"><a class="nav-title personal_information_link" title="Personal Information" href="/vn/myaccount/profile/profile.php">Thông Tin Cá Nhân</a></li>
+        <li class="navgroup"><a class="nav-title your_preferences_link" title="Your Preferences" href="#">Tùy Chọn Của Bạn</a></li>
+        <li class="navgroup"><a class="nav-title address_book_link" title="Address Book" href="/vn/myaccount/address/address.php">Địa Chỉ Đặt Trước</a></li>
+        <li class="navgroup"><a class="nav-title order_history_link" title="Order History" href="#">Lịch Sử Đặt Hàng</a></li>
+        <li class="navgroup"><a class="nav-title wishlist_link" title="Wish List" href="#">Danh Sách Yêu Thích</a></li>
+      </ul>
+    </div>
+    <div class="contentasset" data-contentasset-id="account-navigation-mi" data-contentasset="account-navigation-mi">
+      <ul>
+        <li class="navgroup nav-miadidas"><a class="nav-title mi_adidas_link" title="mi adidas" href="#">mi adidas</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="accountcenter">
+  <div class="accountwelcome">
+    <h1>XIN CHÀO, <%=  current_user ? current_user.name : '' %></h1>
+
+    <div class="not_user">
+      Không phải <span class="username"><%=  current_user ? current_user.name : '' %>?</span> <a title="Đăng xuất" href="/users/sign_out">Đăng xuất</a>
+    </div>
+  </div>
+
+
+  <div class="accountlanding">
+    <div class="carousel_wrap account-landing-slot">
+      <div class="contentstack clearfix contentstack-productcarousel ">
+        
+
+        <div data-certonazoneid="account_rr" class="owlcarousel-wrapper product-carousel-owl threefourth" data-component="productlist/Plp">
+          <div class="owl-carousel owl-theme" data-component="common/OwlCarousel" data-prop-nesteditemselector="hockeycard" data-prop-nav="true" data-prop-items="3.0" data-prop-slideBy="3.0" data-prop-margin="10">
+
+            <!-- show loading icon. -->
+
+            <img class="loading-small" src="/img/loading-small.gif" alt="" style="display: none;" />
+
+            <div id="account_rr">
+              <!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/login/custom.css" rel="stylesheet">
+<div class="stack">
+  <div class="container">
+    <div class="row">
+
+<h4 class="title___37UkT"></h4>
+    <div id="exampleSlider">
+       <div class="MS-content">
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :Tên %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Họ %><br />
+    <%= f.text_field :lastname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Địa chỉ' %><br />
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Phone' %><br />
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :'mật khẩu' %> <i>(để trống nếu bạn không muốn thay đổi nó)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em>ít nhất <%= @minimum_password_length %> kí tự</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'xác nhận mật khẩu' %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'mật khẩu hiện tại' %> <i>(chúng tôi cần mật khẩu hiện tại của bạn để xác nhận thay đổi của bạn)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Cập nhật" %>
+  </div>
+<% end %>
+
+<h3>Xóa tài khoản của bạn</h3>
+
+<p>Nếu xóa tài khoản bạn sẽ không thể truy cập vào mục yêu thích và giỏ hàng của bạn nữa! <%= button_to "Xóa tài khoản của tôi", registration_path(resource_name), data: { confirm: "Bạn chắc không?" }, method: :delete %></p>
+
+<%= link_to "Trở lại", :back %>
+
+       </div>
+       
+   </div>
+
+    <!-- Include jQuery -->
+    <script src="/slider/multislider/js/jquery-2.2.4.min.js"></script>
+
+    <!-- Include Multislider -->
+    <script src="/slider/multislider/js/multislider.min.js"></script>
+
+    <!-- Initialize element with Multislider -->
+    <script>
+    $('#exampleSlider').multislider({
+        interval: 0,
+        slideAll: true,
+        duration: 100
+    });
+    </script>
+
+</div></div></div>
+
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="quick_links clear clearfix">
+  <div class="contentasset" data-contentasset-id="account-quicklinks" data-contentasset="account-quicklinks">
+    <h4>Đường Dẫn Nhanh</h4>
+    <ul>
+    <li><a href="#">Định Vị Cửa Hàng</a></li>
+    <li><a title="Customer Service" href="#">Dịch Vụ Khách Hàng</a></li>
+    <li><a title="View privacy policy" href="#">Chính Sách Bảo Mật</a></li>
+    <li><a title="Secure shopping" href="#">Mua Sắm An Toàn</a></li>
+    <li><a href="#">Thông Tin Giao Hàng</a></li>
+    <li><a href="#">Chính Sách Hoàn Trả</a></li>
+    </ul>
+  </div>
+<!-- End contentasset -->
+</div>
+
+<!-- EO: rbk_content_wrapper -->
+</div>
