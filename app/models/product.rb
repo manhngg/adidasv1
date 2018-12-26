@@ -13,7 +13,7 @@ class Product < ApplicationRecord
 	belongs_to :franchise, required: false
 	belongs_to :category, required: false
 	belongs_to :producttype, required: false
-	belongs_to :brand
+	belongs_to :brand, required: false
 	belongs_to :sport, required: false
 	include Filterable
 	scope :gender, -> (status) { where gender_id: status }

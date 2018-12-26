@@ -178,100 +178,340 @@
 
 		<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
 
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/adidasvn/css/font-awesome.min.css" rel="stylesheet">
+<link href="/adidasvn/css/custom.css" rel="stylesheet">
+<div class="stack" style="display: block;"><div class="container"><div class="row">
 
+<h4 class="title___37UkT">XU HƯỚNG LÀ GÌ</h4>
+    <div id="exampleSlider">
+       <div class="MS-content">
+<% @cart.cart_items.order(:id).each do |cart_item| %>
+<% giaban = cart_item.variant.price %>
+        <% if !cart_item.variant.originalprice.nil? then giagoc = cart_item.variant.originalprice end %>
+<div class="item"><div class="items">
+                  <a href="/adidasvn/vn/product/?slot=<?php echo $row['IDSP'] ?>" data-auto-id="glass-hockeycard-link">
+                  <img class="gl-product-card__image" src="<%= url_for(cart_item.variant.avatar) %>" alt="<%= cart_item.product.name %>" height="240" width="240">
+                  <div class="gl-product-card__details">
+                  <div class="gl-product-card__details-top">
+                  <div class="gl-product-card__category gl-label--medium" title="Performance">
+                  <%= cart_item.product.name %>
+                  </div>
+                  </div>
+                  <div class="gl-product-card__details-main">
+                  <div class="gl-product-card__name gl-label gl-label--medium" title="<?php echo $row['TENSP'];?>"><%= cart_item.product.name %></div>
+                  <div class="gl-price-container"><span id="red"
+        <?php if(!empty($giagoc)) echo "style=\"color: red\""?>>  
+        <%= "#{number_to_currency(giaban*23000, precision: 0, separator: ',',delimiter: '.', unit: '₫', format: "%n %u")}" %>
+        </span><strike><%= "#{number_to_currency(giaban*23000, precision: 0, separator: ',',delimiter: '.', unit: '₫', format: "%n %u")}" %></strike>
+    </span></div>
+                  </div>
+                  <div class="gl-product-card__details-bottom">
+                  <div class="gl-product-card__reviews-number">
+                  <%= cart_item.product.comments.count %>
+                  </div>
+                  </div>
+                  </div>
+                  </a>
+</div></div>
+<% end %>
+       </div>
+       <div class="MS-controls" style="display: block;">
+           <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+           <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+       </div>
+   </div>
+
+    <!-- Include jQuery -->
+    <script src="/adidasvn/js/jquery-2.2.4.min.js"></script>
+
+    <!-- Include Multislider -->
+    <script src="/adidasvn/js/multislider.min.js"></script>
+
+    <!-- Initialize element with Multislider -->
+    <script>
+    $('#exampleSlider').multislider({
+        interval: 0,
+        slideAll: true,
+        duration: 100
+    });
+    </script>
+
+</div></div></div>
 
 		<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
 
-		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-		<link href="/css/custom.css" rel="stylesheet">
-		<div class="stack" style="display: none" ><div class="container"><div class="row">
 
-			<h4 class="title___37UkT">CÁC MỤC ĐÃ XEM GẦN ĐÂY</h4>
-			<div id="exampleSlider">
-				<div class="MS-content">
-					<?php 
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/adidasvn/css/font-awesome.min.css" rel="stylesheet">
+<link href="/adidasvn/css/custom.css" rel="stylesheet">
+<div class="stack" style="display: block;"><div class="container"><div class="row">
 
-					for ($x = 1; $x <= 12; $x++) {
-					if(isset($_COOKIE[$x])) {$COOKIE=$_COOKIE[$x];
-				} else {
-				$COOKIE=0;
-			} 
+<h4 class="title___37UkT">CÁC MỤC ĐÃ XEM GẦN ĐÂY</h4>
+    <div id="exampleSlider">
+       <div class="MS-content">
+<% @cart.cart_items.order(:id).each do |cart_item| %>
+<% giaban = cart_item.variant.price %>
+        <% if !cart_item.variant.originalprice.nil? then giagoc = cart_item.variant.originalprice end %>
+<div class="item"><div class="items">
+                  <a href="/adidasvn/vn/product/?slot=<?php echo $row['IDSP'] ?>" data-auto-id="glass-hockeycard-link">
+                  <img class="gl-product-card__image" src="<%= url_for(cart_item.variant.avatar) %>" alt="<%= cart_item.product.name %>" height="240" width="240">
+                  <div class="gl-product-card__details">
+                  <div class="gl-product-card__details-top">
+                  <div class="gl-product-card__category gl-label--medium" title="Performance">
+                  <%= cart_item.product.name %>
+                  </div>
+                  </div>
+                  <div class="gl-product-card__details-main">
+                  <div class="gl-product-card__name gl-label gl-label--medium" title="<?php echo $row['TENSP'];?>"><%= cart_item.product.name %></div>
+                  <div class="gl-price-container"><span id="red"
+        <?php if(!empty($giagoc)) echo "style=\"color: red\""?>>  
+        <%= "#{number_to_currency(giaban*23000, precision: 0, separator: ',',delimiter: '.', unit: '₫', format: "%n %u")}" %>
+        </span><strike><%= "#{number_to_currency(giaban*23000, precision: 0, separator: ',',delimiter: '.', unit: '₫', format: "%n %u")}" %></strike>
+    </span></div>
+                  </div>
+                  <div class="gl-product-card__details-bottom">
+                  <div class="gl-product-card__reviews-number">
+                  <%= cart_item.product.comments.count %>
+                  </div>
+                  </div>
+                  </div>
+                  </a>
+</div></div>
+<% end %>
+       </div>
+       <div class="MS-controls" style="display: block;">
+           <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+           <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+       </div>
+   </div>
 
-			$conn=mysqli_connect( "localhost", "root", "", "adidas"); 
-			mysqli_query($conn, "SET NAMES utf8"); 
-			$sql="select * from sanpham where IDSP=$COOKIE"; 
-			$query=mysqli_query($conn,$sql); 
-			while($row=mysqli_fetch_array($query)) 
-			{ // Mở PHP
-				$giaban=$row['GIABAN']; 
-				$giagoc=$row['GIAGOC'];
-				?>
-				<div class="item"><div class="items">
-					<a href="/products/product/?slot=<?php echo $row['IDSP'] ?>" data-auto-id="glass-hockeycard-link">
-						<img class="gl-product-card__image" src="/images/<?php echo $row['IDSP']?>/<?php echo $row['ANH'] ?>" alt="<?php echo $row['TENSP'];?>" height="240" width="240">
-						<div class="gl-product-card__details">
-							<div class="gl-product-card__details-top">
-								<div class="gl-product-card__category gl-label--medium" title="Performance">
-									<?php
-									if(empty($row['AGE']) or $row['AGE']!='infant_toddler'){
-									if ($row['GENDER']=="kids"){echo $row['GENDER'].' unisex ';} else {
-									if ($row['GENDER']!="" && $row['GENDER']!="boys" && $row['GENDER']!="girls") echo  $row['GENDER'].'\'s'.' '; else echo  $row['GENDER'].' ';}
-								} 
-								else {
-								echo 'infants ';}
-								if(!empty($row['BRAND'])) echo $row['BRAND'].' ';
-								if(!empty($row['SPORTS'])) echo $row['SPORTS'];
-								?>
-							</div>
-						</div>
-						<div class="gl-product-card__details-main">
-							<div class="gl-product-card__name gl-label gl-label--medium" title="<?php echo $row['TENSP'];?>"><?php echo $row['TENSP'];?></div>
-							<div class="gl-price-container"><span id="red"
-								<?php if(!empty($giagoc)) echo "style=\"color: red\""?>>  
-								<?php  echo number_format($giaban*23000,0,".",","),"₫"?> 
-							</span><strike><?php if(!empty($giagoc))  echo number_format($giagoc*23000,0,".",","),"₫"?></strike>
-						</span></div>
-					</div>
-					<div class="gl-product-card__details-bottom">
-						<div class="gl-product-card__reviews-number">
-							<?php
-							$idsp=$row['IDSP'];
-							$sql="SELECT count(postid) as totalreviews FROM comments WHERE postid='$idsp'"; 
-							$result=mysqli_query($conn,$sql);
-							$row=mysqli_fetch_assoc($result); 
-							$total_reviews=$row[ 'totalreviews'];
-							echo $total_reviews; 
-							?>
-						</div>
-					</div>
-				</div>
-			</a>
-		</div></div>
-		<?php
-	}}
-	?>
-</div>
-<div class="MS-controls" <?php if (empty($_COOKIE[5])){ echo 'style="display: none"';} ?>>
-<button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
-<button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-</div>
-</div>
+    <!-- Include jQuery -->
+    <script src="/adidasvn/js/jquery-2.2.4.min.js"></script>
 
-<!-- Include jQuery -->
-<script src="/js/jquery-2.2.4.min.js"></script>
+    <!-- Include Multislider -->
+    <script src="/adidasvn/js/multislider.min.js"></script>
 
-<!-- Include Multislider -->
-<script src="/js/multislider.min.js"></script>
-
-<!-- Initialize element with Multislider -->
-<script>
-$('#exampleSlider').multislider({
-interval: 0,
-slideAll: true,
-duration: 100
-});
-</script>
+    <!-- Initialize element with Multislider -->
+    <script>
+    $('#exampleSlider').multislider({
+        interval: 0,
+        slideAll: true,
+        duration: 100
+    });
+    </script>
 
 </div></div></div>
 
 <!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+
+<style>
+	@media (min-width: 1160px){
+.container {
+    padding: 0px 113px;
+}}
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.title___37UkT {
+  margin-bottom: 0;
+  font-size: 26px;
+  line-height: 24px;
+  text-align: center;
+  width: 100%;
+}
+
+
+.row {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#exampleSlider {
+  position: relative;
+
+}
+
+@media (min-width: 960px){
+.exampleSlider {
+    padding-left: 15px;
+    padding-right: 15px;
+}}
+
+  #exampleSlider {
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+
+#exampleSlider .MS-content {
+  margin: 15px 5%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  #exampleSlider .MS-content {
+    margin: 0;
+  }
+}
+#exampleSlider .MS-content .item {
+  display: inline-block;
+
+  overflow: hidden;
+  position: relative;
+  vertical-align: top;
+
+  border-right: none;
+  width: 25%;
+  height: 400px;
+  padding: 20px 5px;
+  box-sizing: border-box;
+}
+
+#exampleSlider .MS-content .items {
+  display: block;
+  border: 1px solid transparent;
+  overflow: hidden;
+  position: relative;
+  vertical-align: top;
+
+
+
+}
+
+#exampleSlider .MS-content .items:hover {
+  border: 1px solid #d9dcdd;
+
+}
+@media (max-width: 1200px) {
+  #exampleSlider .MS-content .item {
+    width: 25%;
+  }
+}
+@media (max-width: 992px) {
+  #exampleSlider .MS-content .item {
+    width: 33.3333%;
+  }
+}
+@media (max-width: 767px) {
+  #exampleSlider .MS-content .item {
+    width: 50%;
+  }
+}
+#exampleSlider .MS-content .item p {
+  font-size: 30px;
+  text-align: center;
+  line-height: 1;
+  vertical-align: middle;
+  margin: 0;
+  padding: 10px 0;
+}
+#exampleSlider .MS-content .item img{
+  margin-right: auto
+}
+
+#exampleSlider .MS-controls button {
+  position: absolute;
+  border: none;
+  background: transparent;
+  font-size: 30px;
+  outline: 0;
+  top: 35px;
+}
+@media (max-width: 767px) {
+  #exampleSlider .MS-controls button {
+    display: none;
+  }
+}
+#exampleSlider .MS-controls button:hover {
+  cursor: pointer;
+}
+#exampleSlider .MS-controls .MS-left {
+  top: 130px;
+  left: 61px;
+}
+@media (max-width: 992px) {
+  #exampleSlider .MS-controls .MS-left {
+    left: -2px;
+  }
+}
+#exampleSlider .MS-controls .MS-right {
+  top: 130px;
+  right: 61px;
+}
+@media (max-width: 992px) {
+  #exampleSlider .MS-controls .MS-right {
+    right: -2px;
+  }
+}
+
+@media (min-width: 960px){
+.gl-product-card__details {
+    padding: 10px 10px 20px;
+}}
+
+.gl-product-card__details {
+    padding: 10px;
+    overflow: auto;
+    clear: both;
+}
+
+.gl-product-card__details-top {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  margin: 0 0 10px;
+  min-height: 17px;
+}
+
+.gl-product-card__name {
+  letter-spacing: .5px;
+  margin: 0 0 5px;
+  max-height: 30px;
+  overflow: hidden;
+}
+.gl-label--medium {
+  font-size: 12px;
+}
+
+.gl-product-card__category {
+  font-size: 12px;
+  color: #98989a;
+}
+
+.gl-label {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.gl-product-card .gl-price {
+  font-size: 12px;
+}
+.gl-price {
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+}
+.gl-product-card__details-main {
+  line-height: normal;
+  height: 60px;
+}
+.gl-product-card__reviews-number {
+  font-size: 12px;
+  line-height: 1;
+  padding-left: 5px;
+  color: #98989a;
+}
+
+</style>

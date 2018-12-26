@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 		current_user ? session[:cart_id] = current_user.id : ''
 		@cart = Cart.find(session[:cart_id])
 	rescue ActiveRecord::RecordNotFound
-		@cart = Cart.create
+		@cart = Cart.first
 		session[:cart_id] = @cart.id
 	end
 
@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 		current_user ? session[:wish_id] = current_user.id : ''
 		@wish = Wish.find(session[:wish_id])
 	rescue ActiveRecord::RecordNotFound
-		@wish = Wish.create
+		@wish = Wish.first
 		session[:wish_id] = @wish.id
 	end
 
