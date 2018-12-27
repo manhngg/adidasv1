@@ -64,54 +64,54 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
               <div class="col"> <!-- cột 2 menu 1 -->
                 <a style="text-decoration: none"><h2>GIÀY</h2></a>
                 <!-- <a href="/products?genger=men&originals-shoes">Bản Gốc</a> -->
-                <%= link_to "Bản Gốc", products_path(subcategory: "men", brand: "originals", category: "shoes") %>
-                <a href="/products?genger=men&running-shoes">Chạy</a>
-                <a href="/products?genger=men&soccer-shoes">Bóng Đá</a>
-                <a href="/products?genger=men&basketball-shoes">Bóng Rổ</a>
-                <a href="/products?genger=men&training-shoes">Luyện Tập</a>
-                <a href="/products?genger=men&cleats-football">Bóng Bầu Dục</a><!--Dày Đinh-->
-                <a href="/products?genger=men&slides">Dép Quai - Dép Lê</a><!--Dép Lê-->
-                <a href="/products?genger=men&outdoor-shoes">Đi Bộ Đường Dài</a>
-                <a href="/products?genger=men&tennis-shoes">Quần vợt</a>
-                <a href="/products/?skateboarding-shoes">Trượt Ván</a>
-                <a href="/products?genger=men&baseball-shoes">Bóng Chày</a>
-                <a href="/products?genger=men&golf-shoes">golf</a>
+                <%= link_to "Bản Gốc", products_path(gender: "men", brand: "originals", category: "shoes") %>
+                <a href="/products?genger=men&sport=running&category=shoes">Chạy</a>
+                <a href="/products?genger=men&sport=soccer&category=shoes">Bóng Đá</a>
+                <a href="/products?genger=men&sport=basketball&category=shoes">Bóng Rổ</a>
+                <a href="/products?genger=men&sport=training&category=shoes">Luyện Tập</a>
+                <a href="/products?genger=men&producttype=cleats&sport=football">Bóng Bầu Dục</a><!--Dày Đinh-->
+                <a href="/products?genger=men&producttype=slides">Dép Quai - Dép Lê</a><!--Dép Lê-->
+                <a href="/products?genger=men&sport=outdoor&category=shoes">Đi Bộ Đường Dài</a>
+                <a href="/products?genger=men&sport=tennis&category=shoes">Quần vợt</a>
+                <a href="/products/?sport=skateboarding&category=shoes">Trượt Ván</a>
+                <a href="/products?genger=men&sport=baseball&category=shoes">Bóng Chày</a>
+                <a href="/products?genger=men&sport=golf&category=shoes">golf</a>
                 <a href="/products?genger=men&customizable">Tùy Chỉnh với miakat</a>
-                <a href="/products?genger=men&shoes-sale">Giày Giảm Giá</a>
+                <a href="/products?genger=men&category=shoes&sale">Giày Giảm Giá</a>
               </div>
 
               <div class="col"> <!-- cột 3 menu 1 -->
                 <a style="text-decoration: none"><h2>QUẦN ÁO</h2></a>
-                <a href="/products?genger=men&pants">Quần Dài</a>
-                <a href="/products?genger=men&hoodies_sweatshirts">Hoodies - áo nỉ</a>
-                <a href="/products?genger=men&jackets">Áo khoác</a>
-                <a href="/products?genger=men&track_suits">Đồ Ra Đường</a>
-                <a href="/products?genger=men&short_sleeve_shirts">Áo sơ mi ngắn tay</a>
-                <a href="/products?genger=men&t_shirts">Graphic T-Shirts</a>
-                <a href="/products?genger=men&long_sleeve_shirts">Áo sơ mi dài tay</a>
-                <a href="/products?genger=men&polo">polos</a> <!-- Mã Cầu-->
-                <a href="/products?genger=men&jerseys">Jerseys</a> <!-- Áo Nịt Len-->
-                <a href="/products?genger=men&compression">compression</a> <!-- Bó-->
-                <a href="/products?genger=men&tights">Quần Bó</a>
-                <a href="/products?genger=men&shorts">shorts</a>
-                <a href="/products?genger=men&tank_tops">Áo Ba Lỗ</a>
+                <a href="/products?genger=men&producttype=pants">Quần Dài</a>
+                <a href="/products?genger=men&producttype=hoodies_sweatshirts">Hoodies - áo nỉ</a>
+                <a href="/products?genger=men&producttype=jackets">Áo khoác</a>
+                <a href="/products?genger=men&producttype=track_suits">Đồ Ra Đường</a>
+                <a href="/products?genger=men&producttype=short_sleeve_shirts">Áo sơ mi ngắn tay</a>
+                <a href="/products?genger=men&producttype=t_shirts">Graphic T-Shirts</a>
+                <a href="/products?genger=men&producttype=long_sleeve_shirts">Áo sơ mi dài tay</a>
+                <a href="/products?genger=men&category=polo">polos</a> <!-- Mã Cầu-->
+                <a href="/products?genger=men&producttype=jerseys">Jerseys</a> <!-- Áo Nịt Len-->
+                <a href="/products?genger=men&category=compression">compression</a> <!-- Bó-->
+                <a href="/products?genger=men&producttype=tights">Quần Bó</a>
+                <a href="/products?genger=men&producttype=shorts">shorts</a>
+                <a href="/products?genger=men&producttype=tank_tops">Áo Ba Lỗ</a>
                 <a href="/products?genger=men&producttype=underwear">Đồ Lót</a>
-                <a href="/products?genger=men&apparel-sale">Quần Áo Giảm Giá</a>
+                <a href="/products?genger=men&category=apparel&sale">Quần Áo Giảm Giá</a>
               </div>
 
               <div class="col"> <!-- cột 4 menu 1 -->
                 <a style="text-decoration: none"><h2>PHỤ KIỆN</h2></a>
-                <a href="/products?genger=men&bags">Túi và ba lô</a>
-                <a href="/products?genger=men&hats">Mũ - Beanies</a>
-                <a href="/products?genger=men&socks">Vớ</a>
-                <a href="/products?genger=men&phone_case">Ốp Điện Thoại</a>
-                <a href="/products?genger=men&sunglasses">Kính Râm</a>
-                <a href="/products?genger=men&balls">Những Quả Bóng</a>
-                <a href="/products?genger=men&watches">Đồng Hồ</a>
-                <a href="/products?genger=men&gloves">Găng Tay</a>
-                <a href="/products?genger=men&scarves">Khăn Quàng Cổ</a>
-                <a href="/products?genger=men&accessories-grid=true">Tất Cả Phụ Kiện</a>
-                <a href="/products?genger=men&accessories-sale">Phụ Kiện Giảm Giá</a>
+                <a href="/products?genger=men&producttype=bags">Túi và ba lô</a>
+                <a href="/products?genger=men&producttype=hats">Mũ - Beanies</a>
+                <a href="/products?genger=men&producttype=socks">Vớ</a>
+                <a href="/products?genger=men&producttype=phone_case">Ốp Điện Thoại</a>
+                <a href="/products?genger=men&producttype=sunglasses">Kính Râm</a>
+                <a href="/products?genger=men&producttype=balls">Những Quả Bóng</a>
+                <a href="/products?genger=men&producttype=watches">Đồng Hồ</a>
+                <a href="/products?genger=men&producttype=gloves">Găng Tay</a>
+                <a href="/products?genger=men&producttype=scarves">Khăn Quàng Cổ</a>
+                <a href="/products?genger=men&producttype=accessories-grid=true">Tất Cả Phụ Kiện</a>
+                <a href="/products?genger=men&producttype=accessories&sale">Phụ Kiện Giảm Giá</a>
               </div>
 
               <div class="col"> <!-- cột 5 menu 1 -->

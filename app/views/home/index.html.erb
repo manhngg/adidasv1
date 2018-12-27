@@ -186,7 +186,7 @@
     <div id="exampleSlider">
        <div class="MS-content">
 <!-- ---------------------------------------------------------------------------------------------------------------------------- -->
-<% cart_item = CartItem.group('product_id').order('count(*)').limit(1).pluck(:product_id).first %>
+<% cart_item = CartItem.group('product_id').order('count(*)').limit(4).pluck(:product_id).first %>
 <% giaban = cart_item %>
         <% if !cart_item.nil? then giagoc = cart_item end %>
 <div class="item"><div class="items">
@@ -216,7 +216,7 @@
 </div></div>
 <!-- ---------------------------------------------------------------------------------------------------------------------------- -->
 <!-- ---------------------------------------------------------------------------------------------------------------------------- -->
-<% cart_item = CartItem.group('product_id').order('count(*)').limit(2).pluck(:product_id).second %>
+<% cart_item = CartItem.group('product_id').order('count(*)').limit(4).pluck(:product_id).second %>
 <% giaban = cart_item %>
         <% if !cart_item.nil? then giagoc = cart_item end %>
 <div class="item"><div class="items">
@@ -246,7 +246,7 @@
 </div></div>
 <!-- ---------------------------------------------------------------------------------------------------------------------------- -->
 <!-- ---------------------------------------------------------------------------------------------------------------------------- -->
-<% cart_item = CartItem.group('product_id').order('count(*)').limit(3).pluck(:product_id).third %>
+<% cart_item = CartItem.group('product_id').order('count(*)').limit(4).pluck(:product_id).third %>
 <% giaban = cart_item %>
         <% if !cart_item.nil? then giagoc = cart_item end %>
 <div class="item"><div class="items">
