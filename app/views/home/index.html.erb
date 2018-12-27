@@ -115,7 +115,7 @@
 					<h1 class="title">ZX 500 RM</h1>
 					<p class="summary"><%= t(".summary2") %></p>
 					<div class="cta___3s8jP"><a href="
-						/products?category=shoes" title="
+						/products/1?variant=1" title="
 						XEM NGAY BÂY GIỜ"
 						class="gl-cta gl-cta--primary gl-cta--primary-light">
 						XEM NGAY BÂY GIỜ<span class="gl-icon icon  gl-cta__icon icon--size-l"></span></a></div>
@@ -130,7 +130,7 @@
 		<div class="text-center" style="text-align:center">
 
 			<div class="teaser_container">
-				<a href="/products?category=shoes">
+				<a href="/products?franchise=ultraboost">
 					<div class="thumbnail">
 						<%= image_tag("lib/5.jpg") %>
 					</div>
@@ -143,7 +143,7 @@
 			</div>
 			
 			<div class="teaser_container">
-				<a href="/products?category=shoes">
+				<a href="/products?brand=originals">
 					<div class="thumbnail">
 						<%= image_tag("lib/6.webp") %>
 					</div>
@@ -185,35 +185,126 @@
 <h4 class="title___37UkT">XU HƯỚNG LÀ GÌ</h4>
     <div id="exampleSlider">
        <div class="MS-content">
-<% @cart.cart_items.order(:id).each do |cart_item| %>
-<% giaban = cart_item.variant.price %>
-        <% if !cart_item.variant.originalprice.nil? then giagoc = cart_item.variant.originalprice end %>
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+<% cart_item = CartItem.group('product_id').order('count(*)').limit(1).pluck(:product_id).first %>
+<% giaban = cart_item %>
+        <% if !cart_item.nil? then giagoc = cart_item end %>
 <div class="item"><div class="items">
-                  <a href="/adidasvn/vn/product/?slot=<?php echo $row['IDSP'] ?>" data-auto-id="glass-hockeycard-link">
-                  <img class="gl-product-card__image" src="<%= url_for(cart_item.variant.avatar) %>" alt="<%= cart_item.product.name %>" height="240" width="240">
+                  <a href="<%= url_for(products_path)+'/'+cart_item.to_s+'?variant='+cart_item.to_s %>" data-auto-id="glass-hockeycard-link">
+                  <img class="gl-product-card__image" src="<%= url_for(Product.find(cart_item).variants.first.avatar) %>" alt="<%= Product.find(cart_item).name %>" height="240" width="240">
                   <div class="gl-product-card__details">
                   <div class="gl-product-card__details-top">
                   <div class="gl-product-card__category gl-label--medium" title="Performance">
-                  <%= cart_item.product.name %>
+                  <%= Product.find(cart_item).gender.name %>
                   </div>
                   </div>
                   <div class="gl-product-card__details-main">
-                  <div class="gl-product-card__name gl-label gl-label--medium" title="<?php echo $row['TENSP'];?>"><%= cart_item.product.name %></div>
+                  <div class="gl-product-card__name gl-label gl-label--medium" title=""><%= Product.find(cart_item).name %></div>
                   <div class="gl-price-container"><span id="red"
-        <?php if(!empty($giagoc)) echo "style=\"color: red\""?>>  
+        <?php if(!empty($giagoc)) echo "style=\"color: red\""?>
         <%= "#{number_to_currency(giaban*23000, precision: 0, separator: ',',delimiter: '.', unit: '₫', format: "%n %u")}" %>
         </span><strike><%= "#{number_to_currency(giaban*23000, precision: 0, separator: ',',delimiter: '.', unit: '₫', format: "%n %u")}" %></strike>
     </span></div>
                   </div>
                   <div class="gl-product-card__details-bottom">
                   <div class="gl-product-card__reviews-number">
-                  <%= cart_item.product.comments.count %>
+                  <%= Product.find(cart_item).comments.count %>
                   </div>
                   </div>
                   </div>
                   </a>
 </div></div>
-<% end %>
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+<% cart_item = CartItem.group('product_id').order('count(*)').limit(2).pluck(:product_id).second %>
+<% giaban = cart_item %>
+        <% if !cart_item.nil? then giagoc = cart_item end %>
+<div class="item"><div class="items">
+                  <a href="<%= url_for(products_path)+'/'+cart_item.to_s+'?variant='+cart_item.to_s %>" data-auto-id="glass-hockeycard-link">
+                  <img class="gl-product-card__image" src="<%= url_for(Product.find(cart_item).variants.first.avatar) %>" alt="<%= Product.find(cart_item).name %>" height="240" width="240">
+                  <div class="gl-product-card__details">
+                  <div class="gl-product-card__details-top">
+                  <div class="gl-product-card__category gl-label--medium" title="Performance">
+                  <%= Product.find(cart_item).gender.name %>
+                  </div>
+                  </div>
+                  <div class="gl-product-card__details-main">
+                  <div class="gl-product-card__name gl-label gl-label--medium" title=""><%= Product.find(cart_item).name %></div>
+                  <div class="gl-price-container"><span id="red"
+        <?php if(!empty($giagoc)) echo "style=\"color: red\""?>
+        <%= "#{number_to_currency(giaban*23000, precision: 0, separator: ',',delimiter: '.', unit: '₫', format: "%n %u")}" %>
+        </span><strike><%= "#{number_to_currency(giaban*23000, precision: 0, separator: ',',delimiter: '.', unit: '₫', format: "%n %u")}" %></strike>
+    </span></div>
+                  </div>
+                  <div class="gl-product-card__details-bottom">
+                  <div class="gl-product-card__reviews-number">
+                  <%= Product.find(cart_item).comments.count %>
+                  </div>
+                  </div>
+                  </div>
+                  </a>
+</div></div>
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+<% cart_item = CartItem.group('product_id').order('count(*)').limit(3).pluck(:product_id).third %>
+<% giaban = cart_item %>
+        <% if !cart_item.nil? then giagoc = cart_item end %>
+<div class="item"><div class="items">
+                  <a href="<%= url_for(products_path)+'/'+cart_item.to_s+'?variant='+cart_item.to_s %>" data-auto-id="glass-hockeycard-link">
+                  <img class="gl-product-card__image" src="<%= url_for(Product.find(cart_item).variants.first.avatar) %>" alt="<%= Product.find(cart_item).name %>" height="240" width="240">
+                  <div class="gl-product-card__details">
+                  <div class="gl-product-card__details-top">
+                  <div class="gl-product-card__category gl-label--medium" title="Performance">
+                  <%= Product.find(cart_item).gender.name %>
+                  </div>
+                  </div>
+                  <div class="gl-product-card__details-main">
+                  <div class="gl-product-card__name gl-label gl-label--medium" title=""><%= Product.find(cart_item).name %></div>
+                  <div class="gl-price-container"><span id="red"
+        <?php if(!empty($giagoc)) echo "style=\"color: red\""?>
+        <%= "#{number_to_currency(giaban*23000, precision: 0, separator: ',',delimiter: '.', unit: '₫', format: "%n %u")}" %>
+        </span><strike><%= "#{number_to_currency(giaban*23000, precision: 0, separator: ',',delimiter: '.', unit: '₫', format: "%n %u")}" %></strike>
+    </span></div>
+                  </div>
+                  <div class="gl-product-card__details-bottom">
+                  <div class="gl-product-card__reviews-number">
+                  <%= Product.find(cart_item).comments.count %>
+                  </div>
+                  </div>
+                  </div>
+                  </a>
+</div></div>
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+<% cart_item = CartItem.group('product_id').order('count(*)').limit(4).pluck(:product_id).fourth %>
+<% giaban = cart_item %>
+        <% if !cart_item.nil? then giagoc = cart_item end %>
+<div class="item"><div class="items">
+                  <a href="<%= url_for(products_path)+'/'+cart_item.to_s+'?variant='+cart_item.to_s %>" data-auto-id="glass-hockeycard-link">
+                  <img class="gl-product-card__image" src="<%= url_for(Product.find(cart_item).variants.first.avatar) %>" alt="<%= Product.find(cart_item).name %>" height="240" width="240">
+                  <div class="gl-product-card__details">
+                  <div class="gl-product-card__details-top">
+                  <div class="gl-product-card__category gl-label--medium" title="Performance">
+                  <%= Product.find(cart_item).gender.name %>
+                  </div>
+                  </div>
+                  <div class="gl-product-card__details-main">
+                  <div class="gl-product-card__name gl-label gl-label--medium" title=""><%= Product.find(cart_item).name %></div>
+                  <div class="gl-price-container"><span id="red"
+        <?php if(!empty($giagoc)) echo "style=\"color: red\""?>
+        <%= "#{number_to_currency(giaban*23000, precision: 0, separator: ',',delimiter: '.', unit: '₫', format: "%n %u")}" %>
+        </span><strike><%= "#{number_to_currency(giaban*23000, precision: 0, separator: ',',delimiter: '.', unit: '₫', format: "%n %u")}" %></strike>
+    </span></div>
+                  </div>
+                  <div class="gl-product-card__details-bottom">
+                  <div class="gl-product-card__reviews-number">
+                  <%= Product.find(cart_item).comments.count %>
+                  </div>
+                  </div>
+                  </div>
+                  </a>
+</div></div>
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
        </div>
        <div class="MS-controls" style="display: block;">
            <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
@@ -238,7 +329,7 @@
 
 </div></div></div>
 
-		<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
 
 
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/adidasvn/css/font-awesome.min.css" rel="stylesheet">
@@ -248,29 +339,30 @@
 <h4 class="title___37UkT">CÁC MỤC ĐÃ XEM GẦN ĐÂY</h4>
     <div id="exampleSlider">
        <div class="MS-content">
-<% @cart.cart_items.order(:id).each do |cart_item| %>
-<% giaban = cart_item.variant.price %>
-        <% if !cart_item.variant.originalprice.nil? then giagoc = cart_item.variant.originalprice end %>
+<% recent_products.reverse.each do |id| %>
+<% cart_item = Product.find_by(id: id) %>
+<% giaban = cart_item.variants.first.price %>
+        <% if !cart_item.variants.first.originalprice.nil? then giagoc = cart_item.variants.first.originalprice end %>
 <div class="item"><div class="items">
-                  <a href="/adidasvn/vn/product/?slot=<?php echo $row['IDSP'] ?>" data-auto-id="glass-hockeycard-link">
-                  <img class="gl-product-card__image" src="<%= url_for(cart_item.variant.avatar) %>" alt="<%= cart_item.product.name %>" height="240" width="240">
+                  <a href="<%= url_for(products_path)+'/'+cart_item.id.to_s+'?variant='+cart_item.variants.first.id.to_s %>" data-auto-id="glass-hockeycard-link">
+                  <img class="gl-product-card__image" src="<%= url_for(cart_item.variants.first.avatar) %>" alt="<%= cart_item.name %>" height="240" width="240">
                   <div class="gl-product-card__details">
                   <div class="gl-product-card__details-top">
                   <div class="gl-product-card__category gl-label--medium" title="Performance">
-                  <%= cart_item.product.name %>
+                  <%= cart_item.gender.name %>
                   </div>
                   </div>
                   <div class="gl-product-card__details-main">
-                  <div class="gl-product-card__name gl-label gl-label--medium" title="<?php echo $row['TENSP'];?>"><%= cart_item.product.name %></div>
+                  <div class="gl-product-card__name gl-label gl-label--medium" title=""><%= cart_item.name %></div>
                   <div class="gl-price-container"><span id="red"
-        <?php if(!empty($giagoc)) echo "style=\"color: red\""?>>  
+        <?php if(!empty($giagoc)) echo "style=\"color: red\""?>
         <%= "#{number_to_currency(giaban*23000, precision: 0, separator: ',',delimiter: '.', unit: '₫', format: "%n %u")}" %>
         </span><strike><%= "#{number_to_currency(giaban*23000, precision: 0, separator: ',',delimiter: '.', unit: '₫', format: "%n %u")}" %></strike>
     </span></div>
                   </div>
                   <div class="gl-product-card__details-bottom">
                   <div class="gl-product-card__reviews-number">
-                  <%= cart_item.product.comments.count %>
+                  <%= cart_item.comments.count %>
                   </div>
                   </div>
                   </div>

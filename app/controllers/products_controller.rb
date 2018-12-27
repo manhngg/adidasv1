@@ -26,6 +26,11 @@ class ProductsController < ApplicationController
 		add_breadcrumb category.titleize, '/products?category='<<category if @product.category_id.present?
 		productname = @product.name
 		add_breadcrumb productname.titleize, @product
+
+		recent_products.push @product #=> Đẩy 1 product vừa xem vào collection
+  
+  # Lấy toàn bộ danh sách
+  recent_products
 	end
 
 	def new

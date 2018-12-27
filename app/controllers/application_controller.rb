@@ -4,6 +4,15 @@ class ApplicationController < ActionController::Base
 	before_action :set_cart
 	before_action :set_wish
 	add_breadcrumb "Trang chủ", :root_path
+	helper_method [:recent_products, :last_viewed_product]
+
+def recent_products
+  @recent_products ||= RecentProducts.new cookies
+end
+
+def last_viewed_product
+  recent_products.reverse.second
+end
 
 	private
 	
