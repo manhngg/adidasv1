@@ -13,18 +13,18 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
 </div>
 
 <div class="glass-header-top" style="<%=  current_user ? 'display: none' : '' %>">
-  
+
   <a href="#">Giúp<!-- --> </a>
   <div class="menu-spacer___3Gp4L"></div>
   <a href="#">theo dõi đơn hàng và trả về<!-- --> </a>
   <div class="menu-spacer___3Gp4L"></div>
   <em><a href="/users/sign_up">Đăng ký mới<!-- --> </a></em>
-  <a href="/users/sign_in" href="">Đăng nhập<!-- --> 
+  <a href="/users/sign_in" href="">Đăng nhập<!-- -->
     <span class="login-icon"></span></a>
   </div>
 
   <div class="glass-header-top" style="<%= current_user ? '' : 'display: none' %>">
-    
+
     <a href="/users/edit">tài khoản của tôi<!-- --> </a>
     <div class="menu-spacer___3Gp4L"></div>
     <a href="/wish">danh sách yêu thích<!-- --> </a>
@@ -35,7 +35,7 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
     </div>
 
     <div id="logo"><a href="/">
-      <%= image_tag"img/logo.png", style: "float: left; position: absolute; margin-left: 30px;margin-top: -13px;"  , hight: '11%', width: '11%' %>
+      <%= image_tag"img/logo.png", style: "float: left; position: absolute; margin-left: -20px;margin-top: -35px;"  , hight: '11%', width: '11%' %>
     </a></div>
     <%= image_tag("img/header-shadow-img.png", style: "vertical-align: middle;width: 100%; max-height: 30px;"  ) %>
     <!-- ---------------------------------------------------------------------------------------------------------------------------- -->
@@ -53,7 +53,7 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
                 <a href="/products?genger=men&release-dates">Ngày Phát Hành</a>
                 <a href="/products?genger=men&sale" style="font-weight: bold; text-transform: uppercase;">GIẢM GIÁ</a>
                 <br/>
-                <br/>  
+                <br/>
                 <a href="/products?genger=men&podsystem">P.O.D.System</a>
                 <a href="/products?genger=men&adicolor">adicolor</a>
                 <a href="/products?genger=men&ultraboost">ultraboost</a>
@@ -137,7 +137,7 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
           </div>
         </li>
         <li class="dropdown">
-          <%= link_to "NỮ", products_path(gender: "women"), class: "dropbtn" %> 
+          <%= link_to "NỮ", products_path(gender: "women"), class: "dropbtn" %>
           <div class="dropdown-content">
             <div class="col-container">
 
@@ -147,9 +147,9 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
                 <a href="/womenn-best-seller">Bán Chạy Nhất</a>
                 <a href="/women-release-dates">Ngày Phát Hành</a>
                 <a href="/women-sale" style="font-weight: bold; text-transform: uppercase;">GIẢM GIÁ</a>
-                <br/>     
-                <br/>       
-                <%= link_to "P.O.D.System", products_path(subcategory: "women",franchise: "podsystem") %> 
+                <br/>
+                <br/>
+                <%= link_to "P.O.D.System", products_path(subcategory: "women",franchise: "podsystem") %>
                 <a href="/women-adicolor">adicolor</a>
                 <a href="/women-ultraboost">ultraboost</a>
                 <a href="/women-work_out_essentials">Workout Essentials</a>
@@ -180,7 +180,7 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
                 <a href="/women-bras">Áo Ngực Thể Thao</a>
                 <a href="/women-track_suits">Đồ Ra Đường</a>
                 <a href="/women-jackets">Áo khoác</a>
-                <a href="/women-short_sleeve_shirts">Áo sơ mi ngắn tay</a>           
+                <a href="/women-short_sleeve_shirts">Áo sơ mi ngắn tay</a>
                 <a href="/women-long_sleeve_shirts">Áo sơ mi dài tay</a>
                 <a href="/women-compression">compression</a> <!-- Bó-->
                 <a href="/women-polo">polos</a> <!-- Mã Cầu-->
@@ -232,10 +232,10 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
               <div class="col"> <!-- cột 1 menu 3 -->
                 <a><h2 style="text-decoration: none">NỔI BẬT</h2></a>
                 <a href="/products/?kids-new_arrivals">Hàng Mới Về</a>
-                <a href="/products/?kids-best-seller">Bán Chạy Nhất</a>            
+                <a href="/products/?kids-best-seller">Bán Chạy Nhất</a>
                 <a href="/products/?kids-sale" style="font-weight: bold; text-transform: uppercase;">GIẢM GIÁ</a>
-                <br/>     
-                <br/>     
+                <br/>
+                <br/>
                 <a href="/products/?kids-podsystem">P.O.D. System</a>
                 <a href="/products/?kids-ultraboost">Ultraboost</a>
                 <a href="/products/?kids-adicolor">adicolor</a>
@@ -246,12 +246,12 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
                 <a href="/products?age=youth" style="text-decoration: none"><h2>TRẺ (8-14)</h2></a>
                 <a href="/products/?kids-boys-youth-shoes">Giày Trai</a>
                 <a href="/products/?kids-girls-youth-shoes">Giày Gái</a>
-                <a style="text-decoration: none; cursor: default;">---</a>   
+                <a style="text-decoration: none; cursor: default;">---</a>
                 <a href="/products/?kids-boys-youth-apparel">Quần Áo Trai</a>
                 <a href="/products/?kids-girls-youth-apparel">Quần Áo Gái</a>
-                <a style="text-decoration: none; cursor: default;">---</a>   
+                <a style="text-decoration: none; cursor: default;">---</a>
                 <a href="/products/?kids-youth-sale">Giảm Giá</a>
-                <a style="text-decoration: none; cursor: default;">---</a>   
+                <a style="text-decoration: none; cursor: default;">---</a>
                 <a href="/products/?kids-youth" style="font-weight: bold">tất cả Trẻ</a>
               </div>
 
@@ -259,23 +259,23 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
                 <a href="/products?age=children" style="text-decoration: none"><h2>TRẺ EM (4-8)</h2></a>
                 <a href="/products/?kids-boys-children-shoes">Giày Trai</a>
                 <a href="/products/?kids-girls-children-shoes">Giày Gái</a>
-                <a style="text-decoration: none; cursor: default;">---</a>   
+                <a style="text-decoration: none; cursor: default;">---</a>
                 <a href="/products/?kids-boys-children-apparel">Quần Áo Trai</a>
                 <a href="/products/?kids-girls-children-apparel">Quần Áo Gái</a>
-                <a style="text-decoration: none; cursor: default;">---</a>   
+                <a style="text-decoration: none; cursor: default;">---</a>
                 <a href="/products/?kids-children-sale">Giảm Giá</a>
-                <a style="text-decoration: none; cursor: default;">---</a>   
+                <a style="text-decoration: none; cursor: default;">---</a>
                 <a href="/products/?kids-children" style="font-weight: bold">tất cả Trẻ Em</a>
               </div>
 
               <div class="col"> <!-- cột 4 menu 3 -->
                 <a href="/products?age=infant_toddler" style="text-decoration: none"><h2>SƠ SINH - CHẬP CHỮNG (0-4)</h2></a>
                 <a href="/products?age=infant_toddler-shoes">Giày</a>
-                <a style="text-decoration: none; cursor: default;">---</a>   
+                <a style="text-decoration: none; cursor: default;">---</a>
                 <a href="/products/?kids-infant_toddler-apparel">Quần Áo</a>
-                <a style="text-decoration: none; cursor: default;">---</a>   
+                <a style="text-decoration: none; cursor: default;">---</a>
                 <a href="/products/?kids-infant_toddler-sale">Giảm Giá</a>
-                <a style="text-decoration: none; cursor: default;">---</a>   
+                <a style="text-decoration: none; cursor: default;">---</a>
                 <a href="/products/?kids-infant_toddler" style="font-weight: bold">Tất Cả Sơ Sinh - Chập Chững</a>
               </div>
 
@@ -307,11 +307,11 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
                 <a href="/products/?running-shoes">Giày</a>
                 <a href="/products/?running-apparel">Quần Áo</a>
                 <a href="/products/?running-accessories">Phụ Kiện</a>
-                <a style="text-decoration: none; cursor: default;">---</a>       
+                <a style="text-decoration: none; cursor: default;">---</a>
                 <a href="/products/?ultraboost">ultraboost</a>
                 <a href="/products/?alphabounce">alphabounce</a>
                 <a href="/products/?shoes-pureboost">Pureboost</a>
-                <a style="text-decoration: none; cursor: default;">---</a>       
+                <a style="text-decoration: none; cursor: default;">---</a>
                 <a href="/products/?running-grid=true" style="font-weight: bold">tất cả Chạy</a>
               </div>
               <!-- \\\\//// -->
@@ -326,12 +326,12 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
                 <a href="/products/?soccer-shoes">Giày</a>
                 <a href="/products/?soccer-apparel">Quần Áo</a>
                 <a href="/products/?soccer-accessories">Phụ Kiện</a>
-                <a style="text-decoration: none; cursor: default;">---</a>       
+                <a style="text-decoration: none; cursor: default;">---</a>
                 <a href="/products/?Predator">Predator</a>
                 <a href="/products/?X">X</a>
                 <a href="/products/?Nemeziz">Nemeziz</a>
                 <a href="/products/?Copa">Copa</a>
-                <a style="text-decoration: none; cursor: default;">---</a>        
+                <a style="text-decoration: none; cursor: default;">---</a>
                 <a href="/products/?soccer-grid=true" style="font-weight: bold">tất cả soccer</a>
               </div>
               <!-- \\\\//// -->
@@ -345,12 +345,12 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
               <a href="/products/?basketball-shoes">Giày</a>
               <a href="/products/?basketball-apparel">Quần Áo</a>
               <a href="/products/?basketball-accessories">Phụ Kiện</a>
-              <a style="text-decoration: none; cursor: default;">---</a>       
-              <a style="text-decoration: none; cursor: default;">---</a>     
+              <a style="text-decoration: none; cursor: default;">---</a>
+              <a style="text-decoration: none; cursor: default;">---</a>
               <a href="/products/?james_harden">James Harden</a>
               <a href="/products/?damian_lillard">Damian Lillard</a>
               <a href="/products/?crazy_explosive">Crazy Explosive</a>
-              <a style="text-decoration: none; cursor: default;">---</a>        
+              <a style="text-decoration: none; cursor: default;">---</a>
               <a href="/products/?basketball-grid=true" style="font-weight: bold">tất cả Bóng Rổ</a>
             </div>
             <!-- \\\\//// -->
@@ -363,11 +363,11 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
               <a href="/products/?cleats-football">cleats</a><!--Dày Đinh-->
               <a href="/products/?football-apparel">Quần Áo</a>
               <a href="/products/?football-accessories">Phụ Kiện</a>
-              <a style="text-decoration: none; cursor: default;">---</a>       
+              <a style="text-decoration: none; cursor: default;">---</a>
               <a href="/products/?compression">compression</a>
               <a href="/products?genger=men&cleats-football-Freak">Freak cleats</a>
               <a href="/products/?adizero_5_star">Adizero 5-Star</a>
-              <a style="text-decoration: none; cursor: default;">---</a>       
+              <a style="text-decoration: none; cursor: default;">---</a>
               <a href="/products/?football-grid=true" style="font-weight: bold">tất cả football</a>
             </div>
             <!-- \\\\//// -->
@@ -411,11 +411,11 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
               <a href="/products/?originals-apparel">Giày</a>
               <a href="/products/?originals-accessories">Quần Áo</a>
               <a href="/products/?originals-new-arrivals">Hàng Mới Về</a>
-              <a style="text-decoration: none; cursor: default;">---</a>       
+              <a style="text-decoration: none; cursor: default;">---</a>
               <a href="/products/?Superstar">Superstar</a>
               <a href="/products/?Stan Smith">Stan Smith</a>
               <a href="/products/?NMD">NMD</a>
-              <a style="text-decoration: none; cursor: default;">---</a>       
+              <a style="text-decoration: none; cursor: default;">---</a>
               <a href="/products/?originals?grid=true" style="font-weight: bold">tất cả adidas originals</a>
             </div>
             <!-- \\\\//// -->
@@ -434,9 +434,9 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
               <a href="/women-athletics">Quàn Áo Nữ</a>
               <a href="/products/?kids-athletics">Quần Áo Trẻ</a>
               <a href="/products/?athletics-new-arrivals">Hàng Mới Về</a>
-              <a style="text-decoration: none; cursor: default;">---</a>   
+              <a style="text-decoration: none; cursor: default;">---</a>
               <a href="/products/?zne">Z.N.E.</a>
-              <a style="text-decoration: none; cursor: default;">---</a>   
+              <a style="text-decoration: none; cursor: default;">---</a>
               <a href="/products/?athletics-apparel?grid=true" style="font-weight: bold">tất cả Athletics</a>
             </div>
             <!-- \\\\//// -->
@@ -451,10 +451,10 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
               <a href="/products/?adidas_by_stella_mccartney-apparel">Clothing</a>
               <a href="/products/?adidas_by_stella_mccartney-accessories">accessories</a>
               <a href="/products/?adidas_by_stella_mccartney-new-arrivals">Hàng Mới Về</a>
-              <a style="text-decoration: none; cursor: default;">---</a>   
+              <a style="text-decoration: none; cursor: default;">---</a>
               <a href="/products/?adidas_by_stella_mccartney-tennis">tennis</a>
               <a href="/products/?adidas_by_stella_mccartney-training">training</a>
-              <a style="text-decoration: none; cursor: default;">---</a>   
+              <a style="text-decoration: none; cursor: default;">---</a>
               <a href="/products/?adidas_by_stella_mccartney?grid=true" style="font-weight: bold">tất cả adidas bởi Stella McCartney</a>
             </div>
             <!-- \\\\//// -->
@@ -467,7 +467,7 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
               <a href="/products/?campus?grid=true">Khuôn viên</a>
               <a href="/products/?tubular?grid=true">Hình ống</a>
               <a href="/products/?iconics">Biểu tượng</a>
-              <a style="text-decoration: none; cursor: default;">---</a>   
+              <a style="text-decoration: none; cursor: default;">---</a>
               <a href="/products/?adicolor">adicolor Clothing</a>
             </div>
 
@@ -496,7 +496,7 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
               <a href="/products/?gazelle-customizable">Gazelle</a>
               <a href="/products/?originals-spzl-customizable">Spezial</a>
               <a href="/products/?adilaette-customizable">adilette</a>
-              <a style="text-decoration: none; cursor: default;">---</a>       
+              <a style="text-decoration: none; cursor: default;">---</a>
               <a href="/products/?originals-customizable" style="font-weight: bold">All originals</a>
             </div>
             <!-- \\\\//// -->
@@ -511,7 +511,7 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
               <a href="/products/?pureboost-customizable">Pureboost</a>
               <a href="/products/?adizero-running-customizable">Energy Cloud</a>
               <a href="/products/?supernova-customizable">Supernova</a>
-              <a style="text-decoration: none; cursor: default;">---</a>     
+              <a style="text-decoration: none; cursor: default;">---</a>
               <a href="/products/?running-customizable" style="font-weight: bold">All running</a>
             </div>
             <!-- \\\\//// -->
@@ -526,8 +526,8 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
               <a href="/products/?crazylight-basketball-customizable">Crazylight Boost</a>
               <a href="/products/?crazy_explosive-customizable">Crazy Explosive</a>
               <a href="/products/?mad-basketball-shoes-customizable">Mad Bounce</a>
-              <a style="text-decoration: none; cursor: default;">---</a>   
-              <a href="/products/?running-customizable" style="font-weight: bold">All basketball</a> 
+              <a style="text-decoration: none; cursor: default;">---</a>
+              <a href="/products/?running-customizable" style="font-weight: bold">All basketball</a>
             </div>
             <!-- \\\\//// -->
             <!-- COLUMN 4 -->
@@ -538,12 +538,12 @@ logged_out_greeting="CẦN GIÚP ĐỠ? Bắt đầu bằng cách chia sẻ EMAI
               <a href="/products/?ultraboost_4.0-customizable">ultraboost Multi Color</a>
               <a href="/products/?football-customizable">Bóng Bàu Dục</a>
               <a href="/products/?baseball-customizable">Bóng Chày</a>
-              <a style="text-decoration: none; cursor: default;">---</a>    
+              <a style="text-decoration: none; cursor: default;">---</a>
               <a href="/products?genger=men&customizable">Tất Cả của Nam</a>
               <a href="/women-customizable">Tất Cả của Nữ</a>
-              <a style="text-decoration: none; cursor: default;">---</a>    
+              <a style="text-decoration: none; cursor: default;">---</a>
               <a href="/products/?giftcards">Gift Cards</a>
-              <a style="text-decoration: none; cursor: default;">---</a>    
+              <a style="text-decoration: none; cursor: default;">---</a>
             </div>
 
           </div>

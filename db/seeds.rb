@@ -102,14 +102,26 @@ Color.create(name: "multicolor")
 User.create(name: 'Mạnh', lastname: 'Nguyễn', email: 'manh11117@gmail.com', password: 'Abc@123456789', password_confirmation: 'Abc@123456789',admin: 'TRUE')
 Cart.create
 Wish.create
-u = '/home/rootx/adidas/app/assets/images/products'
+
+u = '/home/m/adidas/app/assets/images/products'
 i = 1
+num = 44
+while i <= num  do
+  p = Product.create(name: 'tubular shadow shoes', gender_id: '1', age_id: '', franchise_id: '18', producttype_id: '', brand_id: '1', category_id: '1', sport_id: '')
+  p.variants.create(product_id: p.id, color_id: '1', price: '70', originalprice: '100', sku: 'AQ0886', stock: '1000')
+  p.variants.first.avatar.attach(io: File.open(u+'/'+i.to_s+'/'+i.to_s+'.jpg'), filename: i.to_s+'.jpg', content_type: 'application/jpg')
+  p.variants.first.hover.attach(io: File.open(u+'/'+i.to_s+'/'+i.to_s+'.jpg'), filename: i.to_s+'.jpg', content_type: 'application/jpg')
+  p.variants.first.images.purge
+  i+=1
+end
+
+i = 45
 num = 93
 while i <= num  do
-p = Product.create(name: 'tubular shadow shoes', gender_id: '2', age_id: '', franchise_id: '18', producttype_id: '', brand_id: '1', category_id: '1', sport_id: '')
-p.variants.create(product_id: p.id, color_id: '1', price: '70', originalprice: '100', sku: 'AQ0886', stock: '1000')
-p.variants.first.avatar.attach(io: File.open(u+'/'+i.to_s+'/'+i.to_s+'.jpg'), filename: i.to_s+'.jpg', content_type: 'application/jpg')
-p.variants.first.hover.attach(io: File.open(u+'/'+i.to_s+'/'+i.to_s+'.jpg'), filename: i.to_s+'.jpg', content_type: 'application/jpg')
-p.variants.first.images.purge
-i+=1
+  p = Product.create(name: 'tubular shadow shoes', gender_id: '2', age_id: '', franchise_id: '18', producttype_id: '', brand_id: '1', category_id: '1', sport_id: '')
+  p.variants.create(product_id: p.id, color_id: '1', price: '70', originalprice: '100', sku: 'AQ0886', stock: '1000')
+  p.variants.first.avatar.attach(io: File.open(u+'/'+i.to_s+'/'+i.to_s+'.jpg'), filename: i.to_s+'.jpg', content_type: 'application/jpg')
+  p.variants.first.hover.attach(io: File.open(u+'/'+i.to_s+'/'+i.to_s+'.jpg'), filename: i.to_s+'.jpg', content_type: 'application/jpg')
+  p.variants.first.images.purge
+  i+=1
 end
